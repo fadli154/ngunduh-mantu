@@ -6,7 +6,7 @@ import Button from "@/app/elements/button/Button";
 
 export default function Hero({ guestName }: { guestName: string | null }) {
   return (
-    <div className="relative min-h-screen flex items-center justify-center text-white font-sans overflow-hidden">
+    <div className="relative min-h-[100dvh] flex items-center justify-center text-white font-sans overflow-hidden">
       <HeroBackground />
 
       {/* Overlay */}
