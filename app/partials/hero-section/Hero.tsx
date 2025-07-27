@@ -28,7 +28,7 @@ export default function Hero() {
         <p className="mt-4 text-sm sm:text-base 2xl:text-lg text-gray-300/70 tracking-wide">Menuju Hari Bahagia — 7 September 2025</p>
       </div>
 
-      <div className="absolute h-24 left-0 bottom-0 w-full bg-black/45 dark:bg-black/60 mask-t-from-2 z-10" />
+      <div className="absolute h-24 left-0 bottom-0 w-full bg-black/45 dark:bg-black/80 mask-t-from-2 z-10" />
     </div>
   );
 }
