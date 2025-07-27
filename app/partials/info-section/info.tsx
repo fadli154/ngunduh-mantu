@@ -8,7 +8,6 @@ export default function Info() {
   return (
     <div key={"info-section"} className="relative container flex flex-col items-center justify-center text-secondary-500 dark:text-primary-500 font-sans bg-cover bg-center" id="info">
       {/* Pseudo background layer */}
-      <div className="absolute inset-0 z-0 bg-[url('/img/floral-pattern.jpg')] bg-cover bg-center opacity-10 dark:opacity-5"></div>
 
       {/* Konten utama */}
       <div className="relative z-10 flex flex-col items-center px-4 mt-10 text-center">
