@@ -8,7 +8,7 @@ export default function Info() {
   return (
     <div key={"info-section"} className="relative container flex flex-col items-center justify-center text-secondary-500 dark:text-white2-500 font-sans bg-cover bg-center transition-all duration-300" id="info">
       {/* Konten utama */}
-      <div className="relative z-10 flex flex-col items-center px-4  text-center">
+      <div className="relative z-10 flex flex-col items-center px-4 mt-5 md:mt-8 text-center">
         <h1 className={`${sacramento.className} text-[calc(2.4rem+1.5vw)] text-text-500 font-bold 2xl:text-8xl`}>Acara Pernikahan</h1>
         <h3 className="text-dark2-600 dark:text-white2-500 text-[calc(.7rem+.7vw)] lg:text-lg 2xl:text-2xl 2xl:mt-2">Diselenggarakan pada 7 September 2025 di Tangerang, Banten.</h3>
         <h4 className="text-dark2-600/70 dark:text-white2-500/50 lg:text-sm 2xl:text-lg w-full md:w-1/2 mt-2 2xl:mt-4 text-[calc(.6rem+.6vw)]">
