@@ -10,8 +10,10 @@ export default function HomePage() {
       <Suspense fallback={<SkeletonHero />}>
         <HeroWrapper />
       </Suspense>
-      <Navbar />
-      <Info />
+      <div className="relative">
+        <Navbar />
+        <Info />
+      </div>
     </main>
   );
 }

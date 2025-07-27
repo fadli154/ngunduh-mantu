@@ -6,9 +6,7 @@ import Image from "next/image";
 
 export default function Info() {
   return (
-    <div key={"info-section"} className="relative container flex flex-col items-center justify-center text-secondary-500 dark:text-primary-500 font-sans bg-cover bg-center" id="info">
-      {/* Pseudo background layer */}
-
+    <div key={"info-section"} className="relative container flex flex-col items-center justify-center text-secondary-500 dark:text-white2-500 font-sans bg-cover bg-center" id="info">
       {/* Konten utama */}
       <div className="relative z-10 flex flex-col items-center px-4 mt-10 text-center">
         <h1 className={`${sacramento.className} text-[calc(2.4rem+1.5vw)] font-bold 2xl:text-8xl`}>Acara Pernikahan</h1>

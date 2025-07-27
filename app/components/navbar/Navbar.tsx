@@ -1,15 +1,14 @@
-import { Suspense } from "react";
-import NavLinkList from "@/app/components/navbar/NavLinkList";
-import NavbarClientWrapper from "@/app/components/navbar/NavbarClientWrapper";
+import { ModeToggle } from "@/app/elements/mode-toggle/ModeToggle";
+import { Grey_Qo } from "next/font/google";
+import clsx from "clsx";
+
+const greGrey_Qo = Grey_Qo({ subsets: ["latin"], weight: "400" });
 
 export default function Navbar() {
   return (
-    <nav className="top-0 z-50 w-full px-4 py-3 bg-white/60 dark:bg-dark2-900/60 backdrop-blur border-b border-zinc-300 dark:border-dark2-600 flex justify-between items-center">
-      <div className="text-lg font-bold tracking-widest text-dark2-700 dark:text-white">Fadli & Partner</div>
-      <NavLinkList />
-      <Suspense fallback={null}>
-        <NavbarClientWrapper />
-      </Suspense>
+    <nav className={clsx("sticky top-0 z-50 w-full px-15 py-6 flex justify-between items-center transition-all duration-300", "bg-white backdrop-blur-3xl dark:bg-transparent shadow-md dark:shadow-dark2-700/30 border-b border-zinc-100/10")}>
+      <div className={clsx(greGrey_Qo.className, "text-3xl font-bold tracking-widest text-text-500")}>Agung & Wenny</div>
+      <ModeToggle />
     </nav>
   );
 }
