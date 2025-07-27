@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Info() {
   return (
-    <div className="relative container flex flex-col items-center justify-center text-secondary-500 dark:text-primary-500 font-sans bg-cover bg-center overflow-clip" id="info">
+    <div key={"info-section"} className="relative container flex flex-col items-center justify-center text-secondary-500 dark:text-primary-500 font-sans bg-cover bg-center" id="info">
       {/* Pseudo background layer */}
       <div className="absolute inset-0 z-0 bg-[url('/img/floral-pattern.jpg')] bg-cover bg-center opacity-10 dark:opacity-5"></div>
 
@@ -26,14 +26,14 @@ export default function Info() {
               alt="foto-mempelai-pria"
               width={180}
               height={180}
-              loading="lazy"
+              priority
             />
             <div className="flex flex-col-reverse mt-3 justify-center items-center relative right-4">
               <p className="text-dark2-600/70 dark:text-white2-500 mt-0 md:mt-2 text-[calc(.6rem+.6vw)] 2xl:text-xl">Putra Dari Bapak Salim & Ibu Multahara</p>
               <h1 className={`${sacramento.className} text-[calc(1.5rem+1.5vw)]`}>Agung Afriansyah</h1>
             </div>
           </div>
-          <Image src="/img/heart.png" className="h-20 w-20 2xl:h-25 2xl:w-25 z-10 mt-2 md:mt-0 drop-shadow-sm drop-shadow-text-500/60 dark:brightness-75" alt="foto-hati" width={80} height={80} loading="lazy" />
+          <Image src="/img/heart.png" className="h-20 w-20 2xl:h-25 2xl:w-25 z-10 mt-2 md:mt-0 drop-shadow-sm drop-shadow-text-500/60 dark:brightness-75" alt="foto-hati" width={80} height={80} priority />
           <div className="flex justify-center items-center flex-col md:flex-row">
             <Image
               src="/img/wenny.png"
@@ -41,7 +41,7 @@ export default function Info() {
               alt="foto-mempelai-wanita"
               width={180}
               height={180}
-              loading="lazy"
+              priority
             />
             <div className="flex flex-col-reverse mt-3 justify-center items-center relative left-4">
               <p className="text-dark2-600/70 dark:text-white2-500 mt-0 md:mt-2 text-[calc(.6rem+.6vw)] 2xl:text-xl">Putri Dari Bapak Sukarlan & Ibu Darsini</p>
