@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import React from "react";

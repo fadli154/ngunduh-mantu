@@ -4,7 +4,7 @@ import GuestGreeting from "@/app/partials/hero-section/GuestGreeting";
 import Countdown from "@/app/components/CountDown";
 import Button from "@/app/elements/button/Button";
 
-export default function Hero({ guestName }: { guestName: string | null }) {
+export default function Hero() {
   return (
     <div className="relative min-h-[100dvh] flex items-center justify-center text-white font-sans overflow-hidden">
       <HeroBackground />
@@ -14,7 +14,7 @@ export default function Hero({ guestName }: { guestName: string | null }) {
 
       {/* Konten */}
       <div className="relative z-20 text-center px-4">
-        <GuestGreeting guestName={guestName} />
+        <GuestGreeting />
         <HeroTitle />
 
         <div className="flex justify-center items-center flex-col mt-4">

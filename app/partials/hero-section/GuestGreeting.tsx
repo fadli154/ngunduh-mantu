@@ -1,4 +1,11 @@
-export default function GuestGreeting({ guestName }: { guestName: string | null }) {
+"use client";
+
+import { useSearchParams } from "next/navigation";
+
+export default function GuestGreeting() {
+  const searchParams = useSearchParams();
+  const guestName = searchParams.get("to");
+
   if (!guestName) return null;
 
   return (
