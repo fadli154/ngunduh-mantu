@@ -12,7 +12,7 @@ export default function Info() {
         <h1
           className={`
             ${sacramento.className}
-            text-[calc(2.4rem+1.5vw)] 
+            text-[calc(2.5rem+1.5vw)] 
             font-bold 2xl:text-8xl
             bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b]
             bg-clip-text text-transparent mt-2 

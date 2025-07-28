@@ -42,7 +42,7 @@ export function ModeToggle() {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content ref={contentRef} align="end" sideOffset={8} className="z-50 mt-1 w-40 rounded-md border bg-popover p-1 text-popover-foreground shadow-md">
+        <DropdownMenu.Content ref={contentRef} align="end" sideOffset={8} className="z-50 w-40 rounded-md border bg-popover p-1 text-popover-foreground shadow-md ml-12">
           <DropdownMenu.Item onSelect={() => setTheme("light")} className="cursor-pointer rounded-sm px-2 py-1.5 text-sm hover:bg-accent focus:bg-accent">
             Light
           </DropdownMenu.Item>

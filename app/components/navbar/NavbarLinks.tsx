@@ -7,11 +7,12 @@ const navItems = [
   { label: "Info", to: "info" },
   { label: "RSVP", to: "rsvp" },
   { label: "Gift", to: "gift" },
+  { label: "Gallery", to: "gallery" },
 ];
 
 export default function NavLinks() {
   return (
-    <div className="hidden md:flex space-x-6 items-center">
+    <div className="hidden md:flex space-x-10 items-center">
       {navItems.map((item) => (
         <ScrollLink
           key={item.to}
