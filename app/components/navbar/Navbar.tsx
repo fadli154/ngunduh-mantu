@@ -12,7 +12,7 @@ export default function Navbar() {
         "bg-white backdrop-blur-3xl dark:bg-transparent shadow-md dark:shadow-dark2-700/30 border-b border-zinc-100/10"
       )}
     >
-      <div className={clsx(greGrey_Qo.className, "text-3xl font-bold tracking-widest text-text-500")}>Agung & Wenny</div>
+      <div className={clsx(greGrey_Qo.className, "text-3xl 2xl:text-5xl font-bold tracking-widest text-text-500")}>Agung & Wenny</div>
       <ModeToggle />
     </nav>
   );

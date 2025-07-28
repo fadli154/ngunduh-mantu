@@ -3,6 +3,7 @@ import HeroWrapper from "@/app/partials/hero-section/HeroWrapper";
 import SkeletonHero from "@/app/partials/hero-section/SkeletonHero";
 import Info from "./partials/info-section/info";
 import Navbar from "./components/navbar/Navbar";
+import ButtonIcon from "./elements/button-audio/ButtonAudio";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
         <Navbar />
         <Info />
       </div>
+      <ButtonIcon />
     </main>
   );
 }
