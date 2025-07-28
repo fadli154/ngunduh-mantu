@@ -20,9 +20,9 @@ export default function Hero() {
         <div className="flex justify-center items-center flex-col mt-4">
           <Countdown />
 
-          <Button url="#info" className="mt-14">
-            Lihat Undangan
-          </Button>
+          <div className="mt-14">
+            <Button url="#info">Lihat Undangan</Button>
+          </div>
         </div>
 
         <p className="mt-4 text-sm sm:text-base 2xl:text-lg text-gray-300/70 tracking-wide">Menuju Hari Bahagia — 7 September 2025</p>

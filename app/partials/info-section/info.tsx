@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Info() {
   return (
-    <div key={"info-section"} className="relative container flex flex-col items-center justify-center text-secondary-500 dark:text-white2-500 font-sans bg-cover bg-center transition-all duration-300" id="info">
+    <div key={"info-section"} className="relative min-h-screen container flex flex-col items-center justify-center text-secondary-500 dark:text-white2-500 font-sans bg-cover bg-center transition-all duration-300" id="info">
       {/* Konten utama */}
       <div className="relative z-10 flex flex-col items-center px-4 md:mt-8 text-center">
         <h1
