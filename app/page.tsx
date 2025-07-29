@@ -5,6 +5,9 @@ import Info from "./partials/info-section/info";
 import Navbar from "./components/navbar/Navbar";
 import ButtonIcon from "./elements/button-audio/ButtonAudio";
 import RSVPSection from "./partials/rsvp-section/rsvp";
+import Gallery from "./partials/gallery-section/Gallery";
+import Gift from "./partials/gift-section/Gift";
+import FooterSection from "./partials/footer-section/Footer";
 
 export default function HomePage() {
   return (
@@ -16,6 +19,9 @@ export default function HomePage() {
         <Navbar />
         <Info />
         <RSVPSection />
+        <Gift />
+        <Gallery />
+        <FooterSection />
       </div>
       <ButtonIcon />
     </main>

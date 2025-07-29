@@ -7,7 +7,7 @@
   --color-secondary-500: #6a7c92;
   --color-text-500: #c7a47aff;
   --color-white2-500: #fbfcfe;
-  --color-dark2-600: #080808ff;
+  --color-dark2-600: #080c18ff;
   --animate-spin: spin 6s linear infinite;
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
 }
@@ -37,6 +37,19 @@
       opacity: 1;
       transform: translateY(0) scale(1);
     }
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  .scan {
+    animation: scan 2s infinite linear;
   }
 
   .animate-pop-fade-up {

@@ -42,7 +42,7 @@ export default function Countdown() {
         const value = [timeLeft.days, timeLeft.hours, timeLeft.minutes, timeLeft.seconds][i];
         return (
           <div key={label} className="animate-pop-fade-up">
-            <div className="bg-primary-500/10 shadow-sm text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:w-24 2xl:h-22 rounded-full w-18 h-16 md:w-20 lg:w-22 lg:h-20 flex justify-center flex-col items-center md:h-18 backdrop-blur-sm">
+            <div className="bg-white/20 shadow-sm text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:w-24 2xl:h-22 rounded-full w-18 h-16 md:w-20 lg:w-22 lg:h-20 flex justify-center flex-col items-center md:h-18 backdrop-blur-md">
               {value}
               <span className="block text-sm text-white2-500/60 -mt-1">{label}</span>
             </div>
