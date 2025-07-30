@@ -4,6 +4,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { ModeToggle } from "@/app/elements/mode-toggle/ModeToggle";
 
 const navItems = [
+  { label: "Home", to: "home" },
   { label: "Info", to: "info" },
   { label: "RSVP", to: "rsvp" },
   { label: "Gift", to: "gift" },
@@ -12,7 +13,7 @@ const navItems = [
 
 export default function NavLinks() {
   return (
-    <div className="hidden md:flex space-x-10 items-center">
+    <div className="hidden lg:flex space-x-10 items-center">
       {navItems.map((item) => (
         <ScrollLink
           key={item.to}

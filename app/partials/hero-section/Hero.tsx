@@ -21,7 +21,7 @@ export default function Hero() {
           <Countdown />
 
           <div className="mt-14">
-            <Button url="#info">Lihat Undangan</Button>
+            <Button url="#home">Lihat Undangan</Button>
           </div>
         </div>
 

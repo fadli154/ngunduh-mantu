@@ -1,98 +1,69 @@
 "use client";
 
-import { Sacramento } from "next/font/google";
-import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import { easeOut } from "framer-motion";
-import { useRef } from "react";
+import { FaClock } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { Grey_Qo } from "next/font/google";
+import clsx from "clsx";
 
-const sacramento = Sacramento({ subsets: ["latin"], weight: "400" });
+const greGrey_Qo = Grey_Qo({ subsets: ["latin"], weight: "400" });
 
-export default function Info() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 50 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: easeOut },
-    },
-  };
-
-  const imageFade = {
-    hidden: { opacity: 0, scale: 0.8, y: 50 },
-    show: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 1, ease: easeOut },
-    },
-  };
-
+export default function EventInfo() {
   return (
-    <div key={"info-section"} ref={ref} className="relative min-h-screen container flex flex-col items-center justify-center text-secondary-500 dark:text-white2-500 font-sans bg-cover bg-center transition-all duration-300 px-4" id="info">
-      <motion.div className="relative z-10 flex flex-col items-center text-center" initial="hidden" animate={isInView ? "show" : "hidden"} variants={fadeUp}>
-        <h1
-          className={`
-            ${sacramento.className}
-            text-[calc(2.5rem+1.5vw)] 
-            font-bold 2xl:text-8xl
-            bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b]
-            bg-clip-text text-transparent mt-2 
-          `}
-        >
-          Acara Pernikahan
-        </h1>
+    <section className="w-full bg-primary-500/10 dark:bg-dark2-600 text-white dark:text-white2-500 px-6 py-20 transition-colors duration-500" id="info">
+      <div className="max-w-5xl mx-auto text-center">
+        <motion.h2 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className={clsx(greGrey_Qo.className, "text-text-500 text-6xl mb-4")}>
+          Informasi Acara
+        </motion.h2>
 
-        <motion.h3 className="text-dark2-600 dark:text-white2-500 text-[calc(.7rem+.7vw)] lg:text-lg 2xl:text-2xl 2xl:mt-2" variants={fadeUp} transition={{ delay: 0.2 }}>
-          Diselenggarakan pada 7 September 2025 di Tangerang, Banten.
-        </motion.h3>
+        <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }} className="text-sm md:text-md mb-6 text-dark2-600/60 dark:text-white2-500/90">
+          <strong>Alamat:</strong> Perumahan Total Persada, Jl. Maos Blok H9 No. 34 RT 003/ RW 008 <br /> Kel. Gembor, Kec. Periuk, Kota Tangerang
+        </motion.p>
 
-        <motion.h4 className="text-dark2-600/70 dark:text-white2-500/50 lg:text-sm 2xl:text-lg w-full md:w-1/2 mt-2 2xl:mt-4 text-[calc(.6rem+.6vw)]" variants={fadeUp} transition={{ delay: 0.4 }}>
-          Oleh karena itu, dengan segala hormat, kami bermaksud untuk mengundang Bapak/Ibu, saudara, dan teman-teman untuk hadir pada acara pernikahan kami.
-        </motion.h4>
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="w-full h-64 mb-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7296014977655!2d106.58470369999999!3d-6.166953099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ff96b061f43f%3A0xce1ff0f52e3a9398!2sWarung%20Sayur%20SUKARLAN!5e0!3m2!1sid!2sid!4v1753885056358!5m2!1sid!2sid"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            className="rounded-xl shadow-lg dark:shadow-primary-500/15 border-2 border-white/80"
+            allowFullScreen
+          ></iframe>
+        </motion.div>
 
-        <div className="flex mt-10 2xl:mt-20 justify-center items-start md:items-center gap-4">
-          {/* Mempelai Pria */}
-          <motion.div className="flex justify-center items-center flex-col md:flex-row-reverse" variants={imageFade} transition={{ delay: 0.6 }}>
-            <Image
-              src="/img/agung.png"
-              className="relative drop-shadow-md drop-shadow-text-500/60 dark:brightness-75 right-4 md:-right-5 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 rounded-full"
-              alt="foto-mempelai-pria"
-              width={180}
-              height={180}
-              priority
-            />
-            <div className="flex flex-col-reverse mt-3 justify-center items-center relative right-4">
-              <p className="text-dark2-600/70 dark:text-white2-500 mt-0 md:mt-2 text-[calc(.6rem+.6vw)] 2xl:text-xl">Putra Dari Bapak Salim & Ibu Multahara</p>
-              <h1 className={`${sacramento.className} text-text-500 text-[calc(1.5rem+1.5vw)]`}>Agung Afriansyah</h1>
+        <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.5 }} className="text-sm mb-10 text-dark2-600/40 dark:text-white2-500/80">
+          Diharapkan untuk tidak salah alamat dan tanggal. Jika tiba di tempat tanpa tanda-tanda pernikahan, cek ulang jadwal dan lokasi.
+        </motion.p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="bg-secondary-500/10 dark:bg-white2-500/10 p-6 backdrop-blur-xl rounded-xl shadow-lg dark:shadow-primary-500/15 py-8"
+          >
+            <h3 className="text-2xl font-bold mb-2 text-text-500/80">Akad Nikah</h3>
+            <div className="flex items-center gap-2 justify-center text-dark2-600/50 dark:text-white2-500 mb-1">
+              <FaClock /> <span className="text-center text-dark2-600/50 dark:text-white2-500">08.00 - 10.00</span>
             </div>
+            <p className="text-dark2-600/50 dark:text-white2-500 mb-2">Minggu, 20 November 2023</p>
+            <p className="text-sm text-dark2-600/50 dark:text-white2-500/70">Saat acara akad diharapkan untuk menjaga kekhidmatan dan hadir tepat waktu.</p>
           </motion.div>
 
-          {/* Icon Hati */}
-          <motion.div className="z-10 mt-2 md:mt-0" variants={fadeUp} transition={{ delay: 0.8 }}>
-            <Image src="/img/heart.png" className="min-h-20 min-w-20 2xl:min-h-25 2xl:min-w-25 drop-shadow-sm drop-shadow-text-500/60 dark:brightness-75" alt="foto-hati" width={80} height={80} priority />
-          </motion.div>
-
-          {/* Mempelai Wanita */}
-          <motion.div className="flex justify-center items-center flex-col md:flex-row" variants={imageFade} transition={{ delay: 1 }}>
-            <Image
-              src="/img/wenny.png"
-              className="relative drop-shadow-md drop-shadow-text-500/60 dark:brightness-75 left-4 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 md:-left-5 rounded-full"
-              alt="foto-mempelai-wanita"
-              width={180}
-              height={180}
-              priority
-            />
-            <div className="flex flex-col-reverse mt-3 justify-center items-center relative left-4">
-              <p className="text-dark2-600/70 dark:text-white2-500 mt-0 md:mt-2 text-[calc(.6rem+.6vw)] 2xl:text-xl">Putri Dari Bapak Sukarlan & Ibu Darsini</p>
-              <h1 className={`${sacramento.className} text-text-500 text-[calc(1.5rem+1.5vw)]`}>Wenny Tri Landari</h1>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="bg-secondary-500/10 dark:bg-white2-500/10 p-6 backdrop-blur-xl rounded-xl shadow-lg dark:shadow-primary-500/15 py-8"
+          >
+            <h3 className="text-2xl font-bold mb-2 text-text-500/80">Resepsi</h3>
+            <div className="flex items-center gap-2 justify-center text-dark2-600/50 dark:text-white2-500 mb-1">
+              <FaClock /> <span className="text-center">11.00 - selesai</span>
             </div>
+            <p className="text-dark2-600/50 dark:text-white2-500 mb-2">Minggu, 20 November 2023</p>
+            <p className="text-sm text-dark2-600/50 dark:text-white2-500/70">Saat acara resepsi diharapkan untuk tetap tertib dan mengikuti alur yang telah ditentukan.</p>
           </motion.div>
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </section>
   );
 }

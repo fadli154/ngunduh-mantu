@@ -9,6 +9,7 @@ import { Grey_Qo } from "next/font/google";
 const greGrey_Qo = Grey_Qo({ subsets: ["latin"], weight: "400" });
 
 const navItems = [
+  { label: "Home", to: "home" },
   { label: "Info", to: "info" },
   { label: "RSVP", to: "rsvp" },
   { label: "Gift", to: "gift" },
@@ -38,7 +39,7 @@ export default function MobileMenu() {
   }, [isOpen]);
 
   return (
-    <div className="md:hidden relative z-[60]">
+    <div className="lg:hidden relative z-[60]">
       {/* Hamburger Button */}
       <button ref={buttonRef} className="w-8 h-8 flex flex-col justify-center items-center group z-[60] relative" onClick={() => setIsOpen((prev) => !prev)}>
         <span className={clsx("absolute w-8 h-1 bg-text-500 rounded transition-all duration-300 origin-center", isOpen ? "rotate-45" : "-translate-y-2")} />

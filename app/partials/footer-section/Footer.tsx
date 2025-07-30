@@ -21,7 +21,7 @@ const socials = [
 
 export default function FooterSection() {
   return (
-    <footer className="bg-background py-20 md:py-32 border-t border-muted">
+    <footer className="py-20 md:py-32 border-t border-muted bg-primary-500/10 dark:bg-dark2-600">
       <div className="mx-auto max-w-6xl px-6 text-center">
         <Link href="/" aria-label="go home" className="flex justify-center mb-8">
           {/* Logo placeholder */}

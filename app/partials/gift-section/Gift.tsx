@@ -5,7 +5,7 @@ import CardQris from "@/app/elements/card/CardQris";
 
 export default function GiftSection() {
   return (
-    <section id="gift" className="px-6 py-20 md:py-28  flex justify-center items-center">
+    <section id="gift" className="px-6 py-20 md:py-28 bg-primary-500/10 dark:bg-dark2-600 flex justify-center items-center ">
       <div className="w-full max-w-5xl flex flex-col items-center text-center gap-10">
         <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-3xl md:text-4xl font-bold tracking-widest text-text-500">
           Wedding Gift

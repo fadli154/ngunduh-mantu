@@ -54,7 +54,7 @@ export default function WeddingGallery() {
   const filteredItems = galleryItems.filter((item) => item.category === selectedCategory);
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-10 dark:bg-dark2-600  transition-colors duration-300" id="gallery">
+    <section className="py-20 px-4 sm:px-6 lg:px-10 transition-colors duration-300" id="gallery">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
