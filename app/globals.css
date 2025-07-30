@@ -295,3 +295,61 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* animated card */
+.wave {
+  position: absolute;
+  min-width: 900px;
+  min-height: 300px;
+  opacity: 0.6;
+  left: 0;
+  bottom: -20px;
+  margin-left: -50%;
+  margin-top: -30%;
+  background: linear-gradient(744deg, #89bee0ff 0%, #c7a47aff 60%, #b9cbe0);
+  border-radius: 40%;
+  animation: wave 55s infinite linear;
+  z-index: 0;
+}
+
+.wave:nth-child(2),
+.wave:nth-child(3) {
+  top: 210px;
+}
+
+.playing .wave:nth-child(1) {
+  animation-duration: 3000ms;
+}
+
+.playing .wave:nth-child(2) {
+  animation-duration: 4000ms;
+}
+
+.playing .wave:nth-child(3) {
+  animation-duration: 5000ms;
+}
+
+@layer utilities {
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-wave {
+    animation: wave 55s linear infinite;
+  }
+
+  .animate-wave1 {
+    animation: wave1 3000ms linear infinite;
+  }
+  .animate-wave2 {
+    animation: wave2 4000ms linear infinite;
+  }
+  .animate-wave3 {
+    animation: wave3 5000ms linear infinite;
+  }
+}
