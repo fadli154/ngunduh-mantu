@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import CardQris from "@/app/elements/card/CardQris";
+import FlipCard from "@/app/elements/card/FlipCard";
 
 export default function GiftSection() {
   return (
@@ -12,22 +13,9 @@ export default function GiftSection() {
         </motion.h2>
         <p className="text-base md:text-lg text-secondary-500 max-w-xl">Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat melalui:</p>
 
-        <div className="w-full flex flex-col md:flex-row gap-8">
-          {/* Kartu BCA */}
-          <motion.div whileHover={{ scale: 1.03 }} className="relative w-full md:w-1/2 bg-gradient-to-tr from-[#b9cbe0] to-[#6a7c92] rounded-2xl shadow-xl p-6 overflow-hidden text-white">
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl opacity-20" />
-            <div className="relative z-10 h-full flex flex-col justify-between">
-              <div>
-                <p className="text-sm tracking-wide">Bank BCA</p>
-                <p className="text-xl sm:text-2xl font-semibold tracking-widest mt-2">1234 5678 9012</p>
-                <p className="text-sm mt-1">a.n. Agung & Wenny</p>
-              </div>
-              <div className="flex justify-between items-end mt-6">
-                <p className="text-xs text-white/60">Wedding Gift</p>
-                <div className="w-12 h-8 bg-white/30 rounded" />
-              </div>
-            </div>
-          </motion.div>
+        <div className="w-full flex flex-col md:flex-row gap-5">
+          <FlipCard bankName="BCA" rek="6275123181" name="Wenny Tri Landari" />
+          <FlipCard bankName="Mandiri" rek="1760005541352" name="Agung Afrimansyah" />
           <div className="w-full md:w-1/2 flex justify-center">
             <CardQris />
           </div>

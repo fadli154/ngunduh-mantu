@@ -1,22 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { FaXTwitter, FaFacebook, FaInstagram, FaThreads, FaLinkedin, FaTiktok } from "react-icons/fa6";
+import { FaXTwitter, FaFacebook, FaInstagram } from "react-icons/fa6";
 
 const links = [
   { title: "Home", href: "#home" },
-  { title: "Start", href: "#voiceai" },
-  { title: "Features", href: "#features" },
-  { title: "Team", href: "#team" },
+  { title: "Info", href: "#info" },
+  { title: "RSVP", href: "#rsvp" },
+  { title: "Gift", href: "#gift" },
+  { title: "Gallery", href: "#gallery" },
 ];
 
 const socials = [
   { label: "X/Twitter", href: "#", icon: FaXTwitter },
-  { label: "LinkedIn", href: "#", icon: FaLinkedin },
   { label: "Facebook", href: "#", icon: FaFacebook },
-  { label: "Threads", href: "#", icon: FaThreads },
   { label: "Instagram", href: "#", icon: FaInstagram },
-  { label: "TikTok", href: "#", icon: FaTiktok },
 ];
 
 export default function FooterSection() {

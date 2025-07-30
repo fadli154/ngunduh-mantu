@@ -299,7 +299,7 @@
 /* animated card */
 .wave {
   position: absolute;
-  min-width: 900px;
+  min-width: 950px;
   min-height: 300px;
   opacity: 0.6;
   left: 0;
@@ -312,21 +312,25 @@
   z-index: 0;
 }
 
+.wave:nth-child(1) {
+  top: -300px;
+}
+
 .wave:nth-child(2),
 .wave:nth-child(3) {
-  top: 210px;
+  top: 320px;
 }
 
 .playing .wave:nth-child(1) {
-  animation-duration: 3000ms;
+  animation-duration: 6000ms;
 }
 
 .playing .wave:nth-child(2) {
-  animation-duration: 4000ms;
+  animation-duration: 7000ms;
 }
 
 .playing .wave:nth-child(3) {
-  animation-duration: 5000ms;
+  animation-duration: 8500ms;
 }
 
 @layer utilities {
@@ -352,4 +356,22 @@
   .animate-wave3 {
     animation: wave3 5000ms linear infinite;
   }
+}
+
+/* flip card */
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }
