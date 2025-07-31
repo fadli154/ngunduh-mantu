@@ -306,14 +306,14 @@
   bottom: -20px;
   margin-left: -50%;
   margin-top: -30%;
-  background: linear-gradient(744deg, #89bee0ff 0%, #c7a47aff 60%, #b9cbe0);
+  background: linear-gradient(744deg, #7bb4d859 0%, #caa47559 60%, #b0c7e057);
   border-radius: 40%;
   animation: wave 55s infinite linear;
   z-index: 0;
 }
 
 .wave:nth-child(1) {
-  top: -300px;
+  top: -110px;
 }
 
 .wave:nth-child(2),

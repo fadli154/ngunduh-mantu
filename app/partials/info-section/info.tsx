@@ -36,7 +36,7 @@ export default function EventInfo() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/90 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]"
+            className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]"
           >
             <strong>Alamat:</strong> Perumahan Total Persada, Jl. Maos Blok H9 No. 34 RT 003/ RW 008 Kel. Gembor, Kec. Periuk, Kota Tangerang
           </motion.p>

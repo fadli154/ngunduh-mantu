@@ -1,24 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CardQris from "@/app/elements/card/CardQris";
 import FlipCard from "@/app/elements/card/FlipCard";
+import { Sacramento } from "next/font/google";
+
+const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
 export default function GiftSection() {
   return (
     <section id="gift" className="px-6 py-20 md:py-28 bg-primary-500/10 dark:bg-dark2-600 flex justify-center items-center ">
       <div className="w-full max-w-5xl flex flex-col items-center text-center gap-10">
-        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-3xl md:text-4xl font-bold tracking-widest text-text-500">
-          Wedding Gift
-        </motion.h2>
-        <p className="text-base md:text-lg text-secondary-500 max-w-xl">Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat melalui:</p>
+        <div className="flex justify-center items-center flex-col">
+          {/* Hiasan garis di atas */}
+          <div className="w-18 h-1 bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] rounded-full mb-2"></div>
+
+          {/* Judul */}
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className={`
+            ${greSacramento.className}
+            text-[calc(2.5rem+1.5vw)] 
+            font-bold 2xl:text-8xl
+            bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b]
+            bg-clip-text text-transparent 
+          `}
+          >
+            Wedding <span className="text-dark2-600/20 dark:text-white2-500">Gift</span>
+          </motion.h2>
+          <p className="text-base md:text-lg text-secondary-500/80 max-w-xl">Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat melalui:</p>
+        </div>
 
         <div className="w-full flex flex-col md:flex-row gap-5">
           <FlipCard bankName="BCA" rek="6275123181" name="Wenny Tri Landari" />
           <FlipCard bankName="Mandiri" rek="1760005541352" name="Agung Afrimansyah" />
-          <div className="w-full md:w-1/2 flex justify-center">
-            <CardQris />
-          </div>
         </div>
       </div>
     </section>
