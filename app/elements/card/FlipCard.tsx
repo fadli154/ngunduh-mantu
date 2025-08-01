@@ -35,7 +35,17 @@ const Card = ({ bankName, rek, name }: CardProps) => {
           </div>
 
           <div className="absolute top-4 right-4 flex items-center gap-2">
-            <Image src={logo} alt={bankName} width={130} height={130} className={`${bankName === "BCA" ? "filter brightness-200 contrast-200 opacity-95 grayscale" : "mt-1"}`} />
+            <Image
+              src={logo}
+              alt={bankName}
+              className={`
+                ${bankName === "BCA" ? "filter brightness-200 contrast-200 opacity-95 grayscale" : "mt-1"}
+                w-26 sm:w-27 md:w-28 lg:w-32
+              `}
+              width={130}
+              height={130}
+              sizes="(max-width: 640px) 100px, (max-width: 768px) 96px, (max-width: 1024px) 112px, 128px"
+            />
           </div>
 
           {/* Segitiga Icon */}
@@ -49,7 +59,7 @@ const Card = ({ bankName, rek, name }: CardProps) => {
           </div>
 
           {/* Card Number */}
-          <p className="absolute bottom-[25%] left-4 text-2xl tracking-widest font-semibold">{rek}</p>
+          <p className="absolute bottom-[25%] left-4 text-xl sm:text-2xl tracking-widest font-semibold">{rek}</p>
 
           {/* Expiry */}
           <p className="absolute bottom-[16%] left-4 text-xs font-medium">12/28</p>

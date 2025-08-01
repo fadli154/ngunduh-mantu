@@ -32,7 +32,7 @@ export default function GiftSection() {
           <p className="text-base md:text-lg text-secondary-500/80 max-w-xl">Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat melalui:</p>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row gap-5">
+        <div className="w-full flex flex-col md:flex-row justify-center items-center gap-5">
           <FlipCard bankName="BCA" rek="6275 1231 81" name="Wenny Tri Landari" />
           <FlipCard bankName="Mandiri" rek="1760 0055 413 52" name="Agung Afrimansyah" />
         </div>
