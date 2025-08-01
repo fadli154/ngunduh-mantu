@@ -25,7 +25,7 @@ const Card = ({ bankName, rek, name }: CardProps) => {
 
   return (
     <div className="relative w-full max-w-[500px] aspect-[1.586] text-white">
-      <div className="group relative w-full h-full text-center transition-transform duration-700 [transform-style:preserve-3d] hover:rotate-y-180">
+      <div className="group relative w-full h-full text-center transition-transform duration-700 [transform-style:preserve-3d] hover:rotate-y-180 group-focus:rotate-y-180" tabIndex={0}>
         {/* Front Side */}
         <div className={`absolute w-full h-full rounded-xl bg-gradient-to-br ${gradient} overflow-hidden shadow-xl [backface-visibility:hidden]`}>
           {/* Text and logos */}

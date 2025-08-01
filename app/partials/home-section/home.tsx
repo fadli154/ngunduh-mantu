@@ -61,10 +61,10 @@ export default function Home() {
 
         <div className="flex mt-10 2xl:mt-20 justify-center items-start md:items-center gap-4">
           {/* Mempelai Pria */}
-          <motion.div className="flex justify-center items-center flex-col md:flex-row-reverse" variants={imageFade} transition={{ delay: 0.6 }}>
+          <motion.div className="flex justify-center items-center flex-col lg:flex-row-reverse" variants={imageFade} transition={{ delay: 0.6 }}>
             <Image
               src="/img/agung.png"
-              className="relative drop-shadow-md drop-shadow-text-500/60 dark:brightness-75 right-4 md:-right-5 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 rounded-full"
+              className="relative drop-shadow-md drop-shadow-text-500/60 dark:brightness-75 right-4 md:-right-5 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 rounded-t-full md:rounded-b-full"
               alt="foto-mempelai-pria"
               width={180}
               height={180}
@@ -82,10 +82,10 @@ export default function Home() {
           </motion.div>
 
           {/* Mempelai Wanita */}
-          <motion.div className="flex justify-center items-center flex-col md:flex-row" variants={imageFade} transition={{ delay: 1 }}>
+          <motion.div className="flex justify-center items-center flex-col lg:flex-row" variants={imageFade} transition={{ delay: 1 }}>
             <Image
               src="/img/wenny.png"
-              className="relative drop-shadow-md drop-shadow-text-500/60 dark:brightness-75 left-4 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 md:-left-5 rounded-full"
+              className="relative drop-shadow-md drop-shadow-text-500/60 dark:brightness-75 left-4 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 md:-left-5 rounded-t-full md:rounded-b-full"
               alt="foto-mempelai-wanita"
               width={180}
               height={180}
