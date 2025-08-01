@@ -29,13 +29,13 @@ const Card = ({ bankName, rek, name }: CardProps) => {
   const handleFlip = () => setFlipped(!flipped);
 
   return (
-    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }} viewport={{ once: true }} className="relative w-full max-w-[500px] aspect-[1.586] text-white">
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }} className="relative w-full max-w-[500px] aspect-[1.586] text-white">
       <div className={`group relative w-full h-full text-center transition-transform duration-700 [transform-style:preserve-3d] ${flipped ? "rotate-y-180" : ""}`} onClick={handleFlip}>
         {/* Front Side */}
         <div className={`absolute w-full h-full rounded-xl bg-gradient-to-br ${gradient} overflow-hidden shadow-xl [backface-visibility:hidden]`}>
           <div className="absolute top-4 left-4 text-left space-y-1">
             <p className="text-sm lg:text-lg font-semibold">{bankName}</p>
-            <p className="text-xs text-white/80">Kartu Virtual</p>
+            <p className="text-xs -mt-2 text-white/80">Kartu Virtual</p>
           </div>
 
           <div className="absolute top-4 right-4 flex items-center gap-2">
@@ -52,7 +52,7 @@ const Card = ({ bankName, rek, name }: CardProps) => {
             />
           </div>
 
-          <div className="absolute top-[33.5%] left-5">
+          <div className="absolute top-[34%] md:top-[33.5%] left-5">
             <IoTriangle className="rotate-30" />
           </div>
 
@@ -60,8 +60,8 @@ const Card = ({ bankName, rek, name }: CardProps) => {
             <Image src="/img/chip.png" alt="chip" width={60} height={60} />
           </div>
 
-          <p className="absolute bottom-[25%] left-4 text-xl sm:text-2xl tracking-widest font-semibold">{rek}</p>
-          <p className="absolute bottom-[16%] left-4 text-xs font-medium">12/28</p>
+          <p className="absolute bottom-[25%] left-4 text-xl mb-1 font-bold sm:text-2xl tracking-widest">{rek}</p>
+          <p className="absolute bottom-[16%] left-4 md:-mb-1 text-xs font-medium">12/28</p>
           <p className="absolute bottom-4 left-4 text-sm font-semibold">{name}</p>
 
           <div className="absolute bottom-4 right-4">
@@ -78,7 +78,7 @@ const Card = ({ bankName, rek, name }: CardProps) => {
           <div className="absolute top-6 w-full h-10 bg-black" />
           <div className="absolute top-[4.5rem] left-4 right-4 bg-white h-6 rounded" />
           <div className="absolute top-[4.5rem] py-4 w-full bg-white h-6 flex items-center justify-between px-4">
-            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>Rek: {rek}</p>
+            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}>Rek: {rek}</p>
             <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>{name}</p>
           </div>
         </div>
