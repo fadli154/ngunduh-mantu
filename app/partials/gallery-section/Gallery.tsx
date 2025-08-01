@@ -3,12 +3,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { Sacramento } from "next/font/google";
+
+const sacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
 const categories = [
   { id: "couple", label: "Pengantin" },
   { id: "family", label: "Keluarga" },
   { id: "moment", label: "Spesial" },
-  { id: "friends", label: "Sahabat" },
+  { id: "saudara", label: "Saudara" },
+  { id: "friends", label: "Teman" },
 ];
 
 const galleryItems = [
@@ -17,35 +21,63 @@ const galleryItems = [
     category: "couple",
     title: "Momen Bahagia",
     description: "Pengantin di hari sakral mereka.",
-    image: "https://picsum.photos/id/1011/500/375",
+    image: "/img/couple.jpg",
   },
   {
     id: 2,
     category: "couple",
     title: "Kebersamaan",
     description: "Senyuman di tengah doa dan harapan.",
-    image: "https://picsum.photos/id/1012/500/375",
+    image: "/img/couple2.jpg",
   },
   {
     id: 3,
     category: "family",
     title: "Keluarga Tercinta",
     description: "Doa restu dari keluarga yang menyentuh hati.",
-    image: "https://picsum.photos/id/1015/500/375",
+    image: "/img/hero3.jpg",
+  },
+  {
+    id: 9,
+    category: "family",
+    title: "Keluarga Tercinta",
+    description: "Doa restu dari keluarga yang menyentuh hati.",
+    image: "/img/hero2.jpg",
   },
   {
     id: 4,
     category: "moment",
-    title: "Lempar Bunga",
-    description: "Tradisi yang penuh tawa dan harapan.",
-    image: "https://picsum.photos/id/1024/500/375",
+    title: "Teman Sejati",
+    description: "Tawa bersama teman di hari bahagia.",
+    image: "/img/sahabat.jpg",
   },
   {
     id: 5,
     category: "friends",
-    title: "Sahabat Sejati",
+    title: "Teman Sejati",
     description: "Tawa bersama teman di hari bahagia.",
-    image: "https://picsum.photos/id/1025/500/375",
+    image: "/img/sahabat2.jpg",
+  },
+  {
+    id: 6,
+    category: "saudara",
+    title: "Saudara",
+    description: "Tawa bersama saudara di hari bahagia.",
+    image: "/img/saudara1.jpg",
+  },
+  {
+    id: 7,
+    category: "saudara",
+    title: "Saudara",
+    description: "Tawa bersama saudara di hari bahagia.",
+    image: "/img/saudara2.jpg",
+  },
+  {
+    id: 8,
+    category: "saudara",
+    title: "Saudara",
+    description: "Tawa bersama saudara di hari bahagia.",
+    image: "/img/saudara6.jpg",
   },
 ];
 
@@ -58,11 +90,16 @@ export default function WeddingGallery() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-sm font-medium mb-2 text-[#c7a47a] tracking-wide uppercase">
+          <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-md md:text-lg font-medium mb-4 text-[#c7a47a] tracking-wide uppercase">
             Galeri
           </motion.p>
-          <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="text-3xl sm:text-4xl font-bold text-[#6a7c92] dark:text-[#b9cbe0] leading-tight">
-            Kenangan Indah Pernikahan
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className={`text-[2.6rem] sm:text-7xl font-bold leading-tight bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] bg-clip-text text-transparent ${sacramento.className}`}
+          >
+            Kenangan Indah <span className="text-dark2-600/20 dark:text-white2-500">Pernikahan</span>
           </motion.h2>
         </div>
 
