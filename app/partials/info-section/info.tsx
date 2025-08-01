@@ -66,7 +66,7 @@ export default function EventInfo() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-sm md:text-md 2xl:text-lg mt-5 bg-text-500/5 dark:bg-text-500/30 shadow-lg dark:shadow-primary-500/15 p-6 rounded-md text-pretty text-start text-dark2-600/40 dark:text-white2-500/80"
+          className="text-sm md:text-md 2xl:text-lg mt-5 bg-text-500/5 dark:bg-text-500/15 shadow-lg dark:shadow-primary-500/15 p-6 rounded-md text-pretty text-start text-dark2-600/40 dark:text-white2-500/80"
         >
           <strong className="text-secondary-500 block text-start h-[60%] border-l-4 pl-2 border-secondary-500/90 dark:text-primary-500 text-[calc(.6rem+.6vw)] mb-2">Informasi Penting</strong> Diharapkan untuk tidak salah alamat dan tanggal.
           Jika tiba di tempat tanpa tanda-tanda pernikahan, cek ulang jadwal dan lokasi.

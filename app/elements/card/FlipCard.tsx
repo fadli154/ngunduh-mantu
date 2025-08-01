@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { IoTriangle } from "react-icons/io5";
+import { motion } from "framer-motion"; // ← Tambahkan ini
 
 type CardProps = {
   bankName: "BCA" | "Mandiri";
@@ -28,7 +29,7 @@ const Card = ({ bankName, rek, name }: CardProps) => {
   const handleFlip = () => setFlipped(!flipped);
 
   return (
-    <div className="relative w-full max-w-[500px] aspect-[1.586] text-white">
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }} viewport={{ once: true }} className="relative w-full max-w-[500px] aspect-[1.586] text-white">
       <div className={`group relative w-full h-full text-center transition-transform duration-700 [transform-style:preserve-3d] ${flipped ? "rotate-y-180" : ""}`} onClick={handleFlip}>
         {/* Front Side */}
         <div className={`absolute w-full h-full rounded-xl bg-gradient-to-br ${gradient} overflow-hidden shadow-xl [backface-visibility:hidden]`}>
@@ -76,13 +77,13 @@ const Card = ({ bankName, rek, name }: CardProps) => {
         <div className={`absolute w-full h-full rounded-xl bg-gradient-to-br ${gradient} rotate-y-180 shadow-xl [backface-visibility:hidden]`}>
           <div className="absolute top-6 w-full h-10 bg-black" />
           <div className="absolute top-[4.5rem] left-4 right-4 bg-white h-6 rounded" />
-          <div className="absolute top-[4.5rem] py-4 w-full bg-white h-6 flex items-center justify-between px-2">
+          <div className="absolute top-[4.5rem] py-4 w-full bg-white h-6 flex items-center justify-between px-4">
             <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>Rek: {rek}</p>
             <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>{name}</p>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

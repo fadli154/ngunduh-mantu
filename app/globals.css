@@ -213,6 +213,17 @@
   .container {
     padding: 0 2rem;
   }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-text-500);
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
 }
 
 @theme inline {
@@ -306,7 +317,7 @@
   bottom: -20px;
   margin-left: -50%;
   margin-top: -30%;
-  background: linear-gradient(744deg, #7bb4d859 0%, #caa47559 60%, #b0c7e057);
+  background: linear-gradient(744deg, #b8870b0c 0%, #bba56e44 60%, #e4a5071a);
   border-radius: 40%;
   animation: wave 55s infinite linear;
   z-index: 0;

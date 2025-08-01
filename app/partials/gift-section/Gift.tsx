@@ -12,7 +12,7 @@ export default function GiftSection() {
       <div className="w-full max-w-5xl flex flex-col items-center text-center gap-10">
         <div className="flex justify-center items-center flex-col">
           {/* Hiasan garis di atas */}
-          <div className="w-18 h-1 bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] rounded-full mb-2"></div>
+          <div className="w-18 h-1 bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] rounded-full mb-2 2xl:mb-8"></div>
 
           {/* Judul */}
           <motion.h2

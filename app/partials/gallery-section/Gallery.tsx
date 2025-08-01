@@ -104,7 +104,7 @@ export default function WeddingGallery() {
         </div>
 
         {/* Filter Buttons */}
-        <div className="overflow-x-auto scrollbar-hidden flex gap-3 sm:justify-center border-b border-gray-200 dark:border-gray-600 pb-4 2xl:pb-6 2xl:border-b-3 mb-12">
+        <div className="overflow-x-auto flex gap-3 sm:justify-center border-b border-gray-200 dark:border-gray-600 pb-4 2xl:pb-6 2xl:border-b-3 mb-12">
           {categories.map((cat) => (
             <button
               key={cat.id}
