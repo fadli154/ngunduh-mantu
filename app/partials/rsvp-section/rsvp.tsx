@@ -89,7 +89,7 @@ export default function RSVPSection() {
             onChange={handleChange}
             placeholder="Contoh: Budi Santoso"
             required
-            className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white px-4 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all dark:placeholder:text-gray-800"
+            className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white px-4 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all dark:placeholder:text-white/60"
           />
         </div>
 
