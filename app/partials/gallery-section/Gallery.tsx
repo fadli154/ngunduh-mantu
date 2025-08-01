@@ -97,7 +97,7 @@ export default function WeddingGallery() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className={`text-[2.6rem] sm:text-7xl font-bold leading-tight bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] bg-clip-text text-transparent ${sacramento.className}`}
+            className={`text-[2.6rem] sm:text-7xl pb-2 font-bold leading-tight bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] bg-clip-text text-transparent ${sacramento.className}`}
           >
             Kenangan Indah <span className="text-dark2-600/20 dark:text-white2-500">Pernikahan</span>
           </motion.h2>

@@ -12,7 +12,7 @@ type CardProps = {
 
 const bankStyles = {
   BCA: {
-    gradient: "from-[#002F6C] to-[#004896]",
+    gradient: "from-[#002F6C] to-[#0559B3FF]",
     logo: "/img/bcalogo.png",
   },
   Mandiri: {
