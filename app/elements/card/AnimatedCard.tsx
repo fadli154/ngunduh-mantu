@@ -20,11 +20,11 @@ export default function AnimatedCard({ title, date, time }: CardProps) {
       {/* Info Section */}
       <div className="relative flex justify-center items-center flex-col right-0 top-15 text-center text-white font-semibold text-lg">
         <FaClock className="w-10 h-10 mb-2" />
-        <h3 className="text-2xl font-bold text-white2-500/90 dark:text-white2-500/40 text-[calc(.9rem+.8vw)]">{title}</h3>
+        <h3 className="text-2xl font-bold text-white2-500/90 dark:text-white2-500/40 text-[calc(.8rem+.6vw)]">{title}</h3>
         <div className="flex items-center gap-2 justify-center text-dark2-600/50 dark:text-white2-500 mb-1">
-          <span className="text-center text-dark2-600/20 dark:text-white2-500 text-[calc(.8rem+.7vw)]">{time}</span>
+          <span className="text-center text-dark2-600/20 dark:text-white2-500 text-[calc(.8rem+.6vw)]">{time}</span>
         </div>
-        <p className="text-dark2-600/20 dark:text-white2-500 -mt-2 text-[calc(.8rem+.6vw)]">{date}</p>
+        <p className="text-dark2-600/20 dark:text-white2-500 -mt-2 text-[calc(.7rem+.6vw)]">{date}</p>
       </div>
     </div>
   );

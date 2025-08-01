@@ -77,8 +77,8 @@ const Card = ({ bankName, rek, name }: CardProps) => {
           <div className="absolute top-6 w-full h-10 bg-black" />
           <div className="absolute top-[4.5rem] left-4 right-4 bg-white h-6 rounded" />
           <div className="absolute top-[4.5rem] py-4 w-full bg-white h-6 flex items-center justify-between px-2">
-            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>No Rek : {rek}</p>
-            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>Atas Nama : {name}</p>
+            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>Rek: {rek}</p>
+            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>{name}</p>
           </div>
         </div>
       </div>

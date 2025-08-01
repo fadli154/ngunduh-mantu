@@ -24,12 +24,12 @@ export default function GiftSection() {
             text-[calc(2.5rem+1.5vw)] 
             font-bold 2xl:text-8xl
             bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b]
-            bg-clip-text text-transparent 
+            bg-clip-text text-transparent 2xl:pb-9
           `}
           >
             Wedding <span className="text-dark2-600/20 dark:text-white2-500">Gift</span>
           </motion.h2>
-          <p className="text-base md:text-lg text-secondary-500/80 max-w-xl">Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat melalui:</p>
+          <p className="text-base md:text-lg 2xl:text-2xl text-secondary-500/80 max-w-xl 2xl:max-w-3xl">Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat melalui:</p>
         </div>
 
         <div className="w-full flex flex-col md:flex-row justify-center items-center gap-5">

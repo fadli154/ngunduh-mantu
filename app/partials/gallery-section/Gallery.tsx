@@ -104,12 +104,14 @@ export default function WeddingGallery() {
         </div>
 
         {/* Filter Buttons */}
-        <div className="overflow-x-auto scrollbar-hidden flex gap-3 sm:justify-center border-b border-gray-200 dark:border-gray-600 pb-4 mb-12">
+        <div className="overflow-x-auto scrollbar-hidden flex gap-3 sm:justify-center border-b border-gray-200 dark:border-gray-600 pb-4 2xl:pb-6 2xl:border-b-3 mb-12">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 text-sm font-medium transition-all border-b-2 ${selectedCategory === cat.id ? "text-[#c7a47a] border-[#c7a47a]" : "text-gray-500 dark:text-gray-400 border-transparent hover:text-[#c7a47a]"}`}
+              className={`px-4 py-2 2xl:pb-3 text-sm lg:text-md 2xl:text-lg font-medium transition-all border-b-2 2xl:border-b-4 ${
+                selectedCategory === cat.id ? "text-[#c7a47a] border-[#c7a47a]" : "text-gray-500 dark:text-gray-400 border-transparent hover:text-[#c7a47a]"
+              }`}
             >
               {cat.label}
             </button>
@@ -126,27 +128,23 @@ export default function WeddingGallery() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileFocus={{ scale: 1.03 }} // 🔥 Fokus (klik/tap) juga trigger animasi
                 transition={{ duration: 0.4 }}
-                className="group bg-white dark:bg-[#0f172a] rounded-xl shadow hover:shadow-xl transition-all overflow-hidden border border-gray-200 dark:border-gray-700"
+                tabIndex={0} // 🔑 Supaya bisa difokuskan (penting untuk mobile)
+                className="group bg-white dark:bg-[#0f172a] rounded-xl shadow hover:shadow-xl transition-all overflow-hidden border border-gray-200 dark:border-gray-700 outline-none"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={item.image} // pastikan ini adalah URL absolut atau file public, atau sudah dikonfigurasi di next.config.js
-                    alt={item.title}
-                    width={500} // wajib jika layout="intrinsic" atau tidak pakai fill
-                    height={300}
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
+                  <Image src={item.image} alt={item.title} width={500} height={300} className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105 group-focus:scale-105" loading="lazy" />
 
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-500 z-10" />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
-                    <p className="text-white text-center text-lg font-semibold px-2">{item.title}</p>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 group-focus:bg-black/50 transition-all duration-500 z-10" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 z-20">
+                    <p className="text-white text-center text-lg 2xl:text-2xl font-semibold px-2">{item.title}</p>
                   </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-[#6a7c92] dark:text-[#b9cbe0] group-hover:text-[#c7a47a] transition-colors duration-300">{item.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{item.description}</p>
+                <div className="px-6 py-4">
+                  <h3 className="text-lg 2xl:text-2xl font-semibold text-[#6a7c92] dark:text-[#b9cbe0] group-hover:text-[#c7a47a] group-focus:text-[#c7a47a] transition-colors duration-300">{item.title}</h3>
+                  <p className="text-sm lg:text-base 2xl:text-lg text-gray-600 dark:text-gray-400 mt-1">{item.description}</p>
                 </div>
               </motion.div>
             ))}

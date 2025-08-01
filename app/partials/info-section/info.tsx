@@ -24,7 +24,7 @@ export default function EventInfo() {
             text-[calc(2.5rem+1.5vw)] 
             font-bold 2xl:text-8xl
             bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b]
-            bg-clip-text text-transparent 
+            bg-clip-text text-transparent 2xl:pb-6
           `}
           >
             Informasi <span className="text-dark2-600/20 dark:text-white2-500">Acara</span>
@@ -42,7 +42,7 @@ export default function EventInfo() {
           </motion.p>
         </div>
 
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="w-full h-64 mb-6">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="w-full h-64 md:h-80 2xl:h-95 mb-6">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7296014977655!2d106.58470369999999!3d-6.166953099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ff96b061f43f%3A0xce1ff0f52e3a9398!2sWarung%20Sayur%20SUKARLAN!5e0!3m2!1sid!2sid!4v1753885056358!5m2!1sid!2sid"
             width="100%"
@@ -66,7 +66,7 @@ export default function EventInfo() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-sm mt-5 bg-text-500/5 dark:bg-text-500/30 shadow-lg dark:shadow-primary-500/15 p-6 rounded-md text-start text-dark2-600/40 dark:text-white2-500/80"
+          className="text-sm md:text-md 2xl:text-lg mt-5 bg-text-500/5 dark:bg-text-500/30 shadow-lg dark:shadow-primary-500/15 p-6 rounded-md text-pretty text-start text-dark2-600/40 dark:text-white2-500/80"
         >
           <strong className="text-secondary-500 block text-start h-[60%] border-l-4 pl-2 border-secondary-500/90 dark:text-primary-500 text-[calc(.6rem+.6vw)] mb-2">Informasi Penting</strong> Diharapkan untuk tidak salah alamat dan tanggal.
           Jika tiba di tempat tanpa tanda-tanda pernikahan, cek ulang jadwal dan lokasi.

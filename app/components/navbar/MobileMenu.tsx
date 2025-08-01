@@ -69,7 +69,7 @@ export default function MobileMenu() {
             duration={500}
             onClick={() => setIsOpen(false)}
             activeClass="text-yellow-600 dark:text-yellow-400 font-bold"
-            className="cursor-pointer text-lg text-zinc-600 dark:text-zinc-200 hover:text-black dark:hover:text-white transition-colors text-center m-0 py-6 border-b w-full border-zinc-400/20"
+            className="cursor-pointer text-md text-zinc-600 dark:text-zinc-200 hover:text-black dark:hover:text-white transition-colors text-center m-0 py-6 border-b w-full border-zinc-400/20"
           >
             {item.label}
           </ScrollLink>
