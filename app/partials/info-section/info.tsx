@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Sacramento } from "next/font/google";
 import AnimatedCard from "@/app/elements/card/AnimatedCard";
+import { FaClock } from "react-icons/fa";
+import { MdDateRange } from "react-icons/md";
 
 const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
@@ -55,10 +57,10 @@ export default function EventInfo() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.5 }}>
-            <AnimatedCard title="Akad Nikah" date="Minggu, 07 September 2025" time="11.00 WIB" />
+            <AnimatedCard icon={<MdDateRange size={40} />} title="Akad Nikah" date="Minggu, 07 September 2025" time="11.00 WIB" />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 0.6 }}>
-            <AnimatedCard title="Resepsi Nikah" date="Minggu, 07 September 2025" time="12.00 WIB" />
+            <AnimatedCard icon={<FaClock size={40} />} title="Resepsi Nikah" date="Minggu, 07 September 2025" time="12.00 WIB" />
           </motion.div>
         </div>
 

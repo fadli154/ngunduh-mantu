@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaClock } from "react-icons/fa";
 import { Sacramento } from "next/font/google";
 
 const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
@@ -10,9 +9,10 @@ type CardProps = {
   title: string;
   date: string;
   time: string;
+  icon: React.ReactNode;
 };
 
-export default function AnimatedCard({ title, date, time }: CardProps) {
+export default function AnimatedCard({ title, date, time, icon }: CardProps) {
   return (
     <div className="e-card playing relative backdrop-blur-3xl w-full h-65 rounded-2xl overflow-hidden shadow-lg dark:shadow-white2-500/10 bg-transparent mx-auto">
       {/* Animated Waves */}
@@ -22,7 +22,7 @@ export default function AnimatedCard({ title, date, time }: CardProps) {
 
       {/* Info Section */}
       <div className="relative flex justify-center items-center flex-col right-0 top-12  text-center text-white font-semibold text-lg">
-        <FaClock className="w-10 h-10 mb-2 text-[#d4af37]" />
+        <div className="w-10 h-10 mb-2 text-[#d4af37]">{icon}</div>
         <h3
           className={`text-[2rem] md:text-[2.2rem] font-bold ${greSacramento.className} bg-gradient-to-r from-[#d4af37] via-[#807955] to-[#b8860b]
             bg-clip-text text-transparent font-bold`}
