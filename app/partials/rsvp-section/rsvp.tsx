@@ -27,14 +27,14 @@ export default function RSVPSection() {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // ganti
-        "YOUR_TEMPLATE_ID", // ganti
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
         {
           nama: form.nama,
           hadir: form.hadir,
           ucapan: form.ucapan,
         },
-        "YOUR_PUBLIC_KEY" // ganti
+        "YOUR_PUBLIC_KEY"
       )
       .then(() => {
         setSent(true);
@@ -48,7 +48,7 @@ export default function RSVPSection() {
   };
 
   return (
-    <section id="rsvp" className="bg-gradient-to-br from-white to-gray-50 dark:from-dark2-600 dark:to-dark2-700 py-20 sm:py-24 px-4 sm:px-6 md:px-10 2xl:px-32">
+    <section id="rsvp" className="transition-colors duration-300 py-20 sm:py-24 px-4 sm:px-6 md:px-10 2xl:px-32">
       <div className="max-w-xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -59,7 +59,12 @@ export default function RSVPSection() {
           RSVP
         </motion.h2>
 
-        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }} className="text-muted-foreground mt-3 text-sm sm:text-base md:text-lg 2xl:text-xl">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="text-gray-600 dark:text-gray-300 mt-3 text-sm sm:text-base md:text-lg 2xl:text-xl transition-colors duration-300"
+        >
           Mohon konfirmasi kehadiran serta doa restu Anda melalui form berikut.
         </motion.p>
       </div>
@@ -69,10 +74,11 @@ export default function RSVPSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         onSubmit={handleSubmit}
-        className="max-w-xl mx-auto mt-10 bg-white dark:bg-dark2-500/80 border border-gray-200 dark:border-white/10 rounded-2xl shadow-xl px-4 sm:px-6 md:px-10 py-8 sm:py-10 space-y-6 text-left"
+        className="max-w-xl mx-auto mt-10 bg-white dark:bg-dark2-600/80 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl px-4 sm:px-6 md:px-10 py-8 sm:py-10 space-y-6 text-left transition-colors duration-300"
       >
+        {/* Nama Lengkap */}
         <div>
-          <label htmlFor="nama" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200">
+          <label htmlFor="nama" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors">
             Nama Lengkap
           </label>
           <input
@@ -83,15 +89,16 @@ export default function RSVPSection() {
             onChange={handleChange}
             placeholder="Contoh: Budi Santoso"
             required
-            className="w-full rounded-lg border border-gray-300 dark:border-white/10 bg-white/90 dark:bg-dark2-400 px-4 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all"
+            className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white px-4 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all dark:placeholder:text-gray-800"
           />
         </div>
 
+        {/* Kehadiran */}
         <div>
-          <p className="mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200">Kehadiran</p>
+          <p className="mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors">Kehadiran</p>
           <div className="flex gap-4">
             {["Ya", "Tidak"].map((val) => (
-              <label key={val} className="inline-flex items-center gap-2 text-sm cursor-pointer">
+              <label key={val} className="inline-flex items-center gap-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer transition-colors">
                 <input type="radio" name="hadir" value={val} checked={form.hadir === val} onChange={handleChange} className="accent-gold" />
                 {val === "Ya" ? "Hadir" : "Tidak Hadir"}
               </label>
@@ -99,8 +106,9 @@ export default function RSVPSection() {
           </div>
         </div>
 
+        {/* Ucapan */}
         <div>
-          <label htmlFor="ucapan" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200">
+          <label htmlFor="ucapan" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors">
             Ucapan & Doa
           </label>
           <textarea
@@ -111,10 +119,11 @@ export default function RSVPSection() {
             onChange={handleChange}
             placeholder="Sampaikan ucapan atau doa terbaik Anda..."
             required
-            className="w-full rounded-lg border border-gray-300 dark:border-white/10 bg-white/90 dark:bg-dark2-400 px-4 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all resize-none"
+            className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white px-4 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all resize-none"
           />
         </div>
 
+        {/* Tombol Submit */}
         <div className="text-center pt-2">
           <button type="submit" disabled={loading} className="bg-gradient-to-r from-[#d4af37] to-[#b8870b] hover:brightness-110 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all shadow-lg disabled:opacity-70">
             {loading ? "Mengirim..." : sent ? "Terkirim ✓" : "Kirim Ucapan"}
