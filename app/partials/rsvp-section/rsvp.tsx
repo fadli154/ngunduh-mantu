@@ -49,7 +49,7 @@ export default function RSVPSection() {
 
   return (
     <section id="rsvp" className="transition-colors duration-300 py-20 sm:py-24 px-4 sm:px-6 md:px-10 2xl:px-32">
-      <div className="max-w-xl mx-auto text-center">
+      <div className="max-w-xl mx-auto flex flex-col items-center text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function RSVPSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-gray-600 dark:text-gray-300 mt-3 text-sm sm:text-base md:text-lg 2xl:text-xl transition-colors duration-300"
+          className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]"
         >
           Mohon konfirmasi kehadiran serta doa restu Anda melalui form berikut.
         </motion.p>
@@ -74,7 +74,7 @@ export default function RSVPSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         onSubmit={handleSubmit}
-        className="max-w-xl mx-auto mt-10 bg-white dark:bg-dark2-600/80 rounded-2xl shadow-xl px-4 sm:px-6 md:px-10 py-8 border-t-2 border-amber-400 sm:py-10 space-y-6 text-left transition-colors duration-300"
+        className="max-w-xl mx-auto mt-4 bg-white dark:bg-dark2-600/80 rounded-2xl shadow-lg dark:shadow-primary-500/20 px-4 sm:px-6 md:px-10 py-8 border-t-2 border-amber-400 sm:py-10 space-y-6 text-left transition-colors duration-300"
       >
         {/* Nama Lengkap */}
         <div>

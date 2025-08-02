@@ -59,7 +59,7 @@ export default function Home() {
           Oleh karena itu, dengan segala hormat, kami bermaksud untuk mengundang Bapak/Ibu, saudara, dan teman-teman untuk hadir pada acara pernikahan kami.
         </motion.h4>
 
-        <div className="flex mt-10 2xl:mt-20 justify-center items-start md:items-center gap-4">
+        <div className="flex mt-10 2xl:mt-20 justify-evenly items-start md:items-center gap-4">
           {/* Mempelai Pria */}
           <motion.div className="flex justify-center items-center flex-col lg:flex-row-reverse" variants={imageFade} transition={{ delay: 0.6 }}>
             <Image
@@ -77,8 +77,8 @@ export default function Home() {
           </motion.div>
 
           {/* Icon Hati */}
-          <motion.div className="z-10 mt-2 md:mt-0" variants={fadeUp} transition={{ delay: 0.8 }}>
-            <Image src="/img/heart.png" className="min-h-20 min-w-20 2xl:min-h-25 2xl:min-w-25 drop-shadow-sm drop-shadow-text-500/60 dark:brightness-75" alt="foto-hati" width={80} height={80} priority />
+          <motion.div className="z-10 mt-9 md:mt-0" variants={fadeUp} transition={{ delay: 0.8 }}>
+            <Image src="/img/heart.png" className="min-h-12 min-w-12 2xl:min-h-25 2xl:min-w-25 drop-shadow-sm drop-shadow-text-500/60 dark:brightness-75" alt="foto-hati" width={80} height={80} priority />
           </motion.div>
 
           {/* Mempelai Wanita */}

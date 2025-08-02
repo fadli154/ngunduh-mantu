@@ -22,7 +22,7 @@ export default function AnimatedCard({ title, date, time, icon }: CardProps) {
 
       {/* Info Section */}
       <div className="relative flex justify-center items-center flex-col right-0 top-12  text-center text-white font-semibold text-lg">
-        <div className="w-10 h-10 mb-2 text-[#d4af37]">{icon}</div>
+        <div className="w-10 h-10 mb-2 text-[#d4af37]/50">{icon}</div>
         <h3
           className={`text-[2rem] md:text-[2.2rem] font-bold ${greSacramento.className} bg-gradient-to-r from-[#d4af37] via-[#807955] to-[#b8860b]
             bg-clip-text text-transparent font-bold`}

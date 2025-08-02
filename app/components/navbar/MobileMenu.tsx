@@ -55,7 +55,7 @@ export default function MobileMenu() {
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className={clsx(greGrey_Qo.className, "text-3xl py-5 2xl:text-5xl font-bold tracking-widest text-text-500 lg:text-4xl drop-shadow-sm drop-shadow-text-500 mb-3")} style={{ transform: "scale(1.1)" }}>
+        <div className={clsx(greGrey_Qo.className, "text-3xl py-5 2xl:text-5xl font-bold tracking-widest text-text-500 lg:text-4xl drop-shadow-sm drop-shadow-text-500 mb-4")} style={{ transform: "scale(1.1)" }}>
           Agung & Wenny
         </div>
 
@@ -69,7 +69,7 @@ export default function MobileMenu() {
             duration={500}
             onClick={() => setIsOpen(false)}
             activeClass="text-yellow-600 dark:text-yellow-400 font-bold"
-            className="cursor-pointer text-md text-zinc-600 dark:text-zinc-200 hover:text-black dark:hover:text-white transition-colors text-center m-0 py-6 border-b w-full border-zinc-400/20"
+            className={`cursor-pointer text-md text-zinc-600 dark:text-zinc-200 hover:text-black dark:hover:text-white transition-colors text-center m-0 py-6 border-b w-full border-zinc-400/20 ${item.label == "Home" ? "border-t" : ""}`}
           >
             {item.label}
           </ScrollLink>

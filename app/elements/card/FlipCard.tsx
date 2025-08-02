@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { IoTriangle } from "react-icons/io5";
-import { motion } from "framer-motion"; // ← Tambahkan ini
+import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 type CardProps = {
   bankName: "BCA" | "Mandiri";
@@ -26,7 +27,17 @@ const Card = ({ bankName, rek, name }: CardProps) => {
   const { gradient, logo } = bankStyles[bankName];
   const [flipped, setFlipped] = useState(false);
 
-  const handleFlip = () => setFlipped(!flipped);
+  const handleFlip = () => {
+    setFlipped(!flipped);
+    navigator.clipboard
+      .writeText(rek)
+      .then(() => {
+        toast.success("Nomor rekening disalin!");
+      })
+      .catch(() => {
+        toast.error("Gagal menyalin nomor rekening");
+      });
+  };
 
   return (
     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }} className="relative w-full max-w-[500px] aspect-[1.586] text-white">
@@ -78,8 +89,8 @@ const Card = ({ bankName, rek, name }: CardProps) => {
           <div className="absolute top-6 w-full h-10 bg-black" />
           <div className="absolute top-[4.5rem] left-4 right-4 bg-white h-6 rounded" />
           <div className="absolute top-[4.5rem] py-4 w-full bg-white h-6 flex items-center justify-between px-4">
-            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}>Rek: {rek}</p>
-            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>{name}</p>
+            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}>No Rek: {rek}</p>
+            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>***</p>
           </div>
         </div>
       </div>
