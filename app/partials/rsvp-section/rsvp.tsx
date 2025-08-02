@@ -74,11 +74,11 @@ export default function RSVPSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         onSubmit={handleSubmit}
-        className="max-w-xl mx-auto mt-4 bg-white dark:bg-dark2-600/80 rounded-2xl shadow-lg dark:shadow-primary-500/20 px-4 sm:px-6 md:px-10 py-8 border-t-2 border-amber-400 sm:py-10 space-y-6 text-left transition-colors duration-300"
+        className="max-w-xl mx-auto mt-4 bg-white dark:bg-dark2-600/80 rounded-2xl shadow-lg dark:shadow-primary-500/20 px-4 sm:px-6 md:px-10 py-8 border-t-2 border-[#d4af37] sm:py-10 space-y-6 text-left transition-colors duration-300"
       >
         {/* Nama Lengkap */}
         <div>
-          <label htmlFor="nama" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors">
+          <label htmlFor="nama" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors 2xl:text-lg 2xl:mb-3">
             Nama Lengkap
           </label>
           <input
@@ -95,10 +95,10 @@ export default function RSVPSection() {
 
         {/* Kehadiran */}
         <div>
-          <p className="mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors">Kehadiran</p>
+          <p className="mb-1 text-sm font-semibold 2xl:text-lg 2xl:mb-3 text-gray-700 dark:text-gray-200 transition-colors">Kehadiran</p>
           <div className="flex gap-4">
             {["Ya", "Tidak"].map((val) => (
-              <label key={val} className="inline-flex items-center gap-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer transition-colors">
+              <label key={val} className="inline-flex items-center gap-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer transition-colors 2xl:text-base">
                 <input type="radio" name="hadir" value={val} checked={form.hadir === val} onChange={handleChange} className="accent-gold" />
                 {val === "Ya" ? "Hadir" : "Tidak Hadir"}
               </label>
@@ -108,7 +108,7 @@ export default function RSVPSection() {
 
         {/* Ucapan */}
         <div>
-          <label htmlFor="ucapan" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors">
+          <label htmlFor="ucapan" className="block mb-1 2xl:text-lg 2xl:mb-3 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors">
             Ucapan & Doa
           </label>
           <textarea

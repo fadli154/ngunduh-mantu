@@ -29,7 +29,9 @@ export default function GiftSection() {
           >
             Wedding <span className="text-dark2-600/20 dark:text-white2-500">Gift</span>
           </motion.h2>
-          <p className="text-base md:text-lg 2xl:text-2xl text-secondary-500/80 max-w-xl 2xl:max-w-3xl">Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat melalui:</p>
+          <p className="text-sm md:text-md mt-1 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[90%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]">
+            Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat melalui:
+          </p>
         </div>
 
         <div className="w-full flex flex-col md:flex-row justify-center items-center gap-5">
