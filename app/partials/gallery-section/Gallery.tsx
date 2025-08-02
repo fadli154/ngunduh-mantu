@@ -8,24 +8,21 @@ import { Sacramento } from "next/font/google";
 const sacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
 const categories = [
-  { id: "couple", label: "Pengantin" },
   { id: "family", label: "Keluarga" },
   { id: "moment", label: "Spesial" },
-  { id: "saudara", label: "Saudara" },
-  { id: "friends", label: "Teman" },
 ];
 
 const galleryItems = [
   {
     id: 1,
-    category: "couple",
+    category: "moment",
     title: "Momen Bahagia",
     description: "Pengantin di hari sakral mereka.",
     image: "/img/couple.jpg",
   },
   {
     id: 2,
-    category: "couple",
+    category: "moment",
     title: "Kebersamaan",
     description: "Senyuman di tengah doa dan harapan.",
     image: "/img/couple2.jpg",
@@ -53,28 +50,28 @@ const galleryItems = [
   },
   {
     id: 5,
-    category: "friends",
+    category: "moment",
     title: "Teman Sejati",
     description: "Tawa bersama teman di hari bahagia.",
     image: "/img/sahabat2.jpg",
   },
   {
     id: 6,
-    category: "saudara",
+    category: "moment",
     title: "Saudara",
     description: "Tawa bersama saudara di hari bahagia.",
     image: "/img/saudara1.jpg",
   },
   {
     id: 7,
-    category: "saudara",
+    category: "moment",
     title: "Saudara",
     description: "Tawa bersama saudara di hari bahagia.",
     image: "/img/saudara2.jpg",
   },
   {
     id: 8,
-    category: "saudara",
+    category: "moment",
     title: "Saudara",
     description: "Tawa bersama saudara di hari bahagia.",
     image: "/img/saudara6.jpg",
@@ -104,7 +101,7 @@ export default function WeddingGallery() {
         </div>
 
         {/* Filter Buttons */}
-        <div className="overflow-x-auto flex gap-3 sm:justify-center border-b border-gray-200 dark:border-gray-600 pb-4 2xl:pb-6 2xl:border-b-3 mb-8">
+        <div className="overflow-x-auto flex gap-3 justify-center border-b border-gray-200 dark:border-gray-600 pb-4 2xl:pb-6 2xl:border-b-3 mb-8">
           {categories.map((cat) => (
             <button
               key={cat.id}
