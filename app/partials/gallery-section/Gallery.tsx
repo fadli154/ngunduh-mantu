@@ -18,11 +18,6 @@ const galleryItems = [
   { id: 2, category: "moment", title: "Kebersamaan", image: "/img/couple2.jpg" },
   { id: 3, category: "family", title: "Keluarga Tercinta", image: "/img/hero3.jpg" },
   { id: 9, category: "family", title: "Keluarga Tercinta", image: "/img/hero2.jpg" },
-  { id: 4, category: "moment", title: "Teman Sejati", image: "/img/sahabat.jpg" },
-  { id: 5, category: "moment", title: "Teman Sejati", image: "/img/sahabat2.jpg" },
-  { id: 6, category: "moment", title: "Saudara", image: "/img/saudara1.jpg" },
-  { id: 7, category: "moment", title: "Saudara", image: "/img/saudara2.jpg" },
-  { id: 8, category: "moment", title: "Saudara", image: "/img/saudara6.jpg" },
 ];
 
 export default function WeddingGallery() {

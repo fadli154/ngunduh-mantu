@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Sacramento } from "next/font/google";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { FaUser, FaEnvelopeOpenText } from "react-icons/fa";
+import { MdEventAvailable } from "react-icons/md";
 
 const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
@@ -17,7 +19,7 @@ export default function RSVPSection() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -77,50 +79,64 @@ export default function RSVPSection() {
         className="max-w-xl mx-auto mt-4 bg-white dark:bg-dark2-600/80 rounded-2xl shadow-lg dark:shadow-primary-500/20 px-4 sm:px-6 md:px-10 py-8 border-t-2 border-[#d4af37] sm:py-10 space-y-6 text-left transition-colors duration-300"
       >
         {/* Nama Lengkap */}
-        <div>
-          <label htmlFor="nama" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors 2xl:text-lg 2xl:mb-3">
+        <div className="relative">
+          <label htmlFor="nama" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 2xl:text-lg">
             Nama Lengkap
           </label>
-          <input
-            type="text"
-            id="nama"
-            name="nama"
-            value={form.nama}
-            onChange={handleChange}
-            placeholder="Contoh: Budi Santoso"
-            required
-            className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white px-4 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all dark:placeholder:text-white/60"
-          />
-        </div>
-
-        {/* Kehadiran */}
-        <div>
-          <p className="mb-1 text-sm font-semibold 2xl:text-lg 2xl:mb-3 text-gray-700 dark:text-gray-200 transition-colors">Kehadiran</p>
-          <div className="flex gap-4">
-            {["Ya", "Tidak"].map((val) => (
-              <label key={val} className="inline-flex items-center gap-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer transition-colors 2xl:text-base">
-                <input type="radio" name="hadir" value={val} checked={form.hadir === val} onChange={handleChange} className="accent-gold" />
-                {val === "Ya" ? "Hadir" : "Tidak Hadir"}
-              </label>
-            ))}
+          <div className="relative">
+            <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-white/40" />
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              value={form.nama}
+              onChange={handleChange}
+              placeholder="Contoh: Budi Santoso"
+              required
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all"
+            />
           </div>
         </div>
 
-        {/* Ucapan */}
-        <div>
-          <label htmlFor="ucapan" className="block mb-1 2xl:text-lg 2xl:mb-3 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors">
+        {/* Kehadiran (Dropdown) */}
+        <div className="relative">
+          <label htmlFor="hadir" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 2xl:text-lg">
+            Konfirmasi Kehadiran
+          </label>
+          <div className="relative">
+            <MdEventAvailable className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-white/40" />
+            <select
+              name="hadir"
+              id="hadir"
+              value={form.hadir}
+              onChange={handleChange}
+              required
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all appearance-none"
+            >
+              <option value="Ya">Hadir</option>
+              <option value="Tidak">Tidak Hadir</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Ucapan & Doa */}
+        <div className="relative">
+          <label htmlFor="ucapan" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 2xl:text-lg">
             Ucapan & Doa
           </label>
-          <textarea
-            id="ucapan"
-            name="ucapan"
-            rows={4}
-            value={form.ucapan}
-            onChange={handleChange}
-            placeholder="Sampaikan ucapan atau doa terbaik Anda..."
-            required
-            className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white px-4 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all resize-none"
-          />
+          <div className="relative">
+            <FaEnvelopeOpenText className="absolute left-3 top-4 text-gray-400 dark:text-white/40" />
+            <textarea
+              id="ucapan"
+              name="ucapan"
+              rows={4}
+              value={form.ucapan}
+              onChange={handleChange}
+              placeholder="Sampaikan ucapan atau doa terbaik Anda..."
+              required
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all resize-none"
+            />
+          </div>
         </div>
 
         {/* Tombol Submit */}

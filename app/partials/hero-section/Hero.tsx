@@ -28,7 +28,7 @@ export default function Hero() {
         <p className="mt-4 text-sm sm:text-base 2xl:text-lg text-gray-300/70 tracking-wide">Menuju Hari Bahagia — 7 September 2025</p>
 
         {/* scroll arrow */}
-        <div className="absolute left-1/2 -translate-x-1/2 -bottom-30 md:-bottom-15 mt-14 md:mt-8 animate-bounce opacity-50">
+        <div className="absolute left-1/2 -translate-x-1/2 -bottom-30 md:-bottom-15 2xl:-bottom-25 mt-14 md:mt-8 animate-bounce opacity-50">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
           </svg>
