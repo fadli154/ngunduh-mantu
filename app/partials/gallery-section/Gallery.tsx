@@ -148,14 +148,14 @@ export default function WeddingGallery() {
                 </button>
               </DialogTrigger>
               a
-              <DialogContent showCloseButton={false} className="fixed z-[999] flex items-center justify-center bg-black/35 border-none min-w-full min-h-screen rounded-none" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+              <DialogContent showCloseButton={false} className="fixed z-[999] flex items-center justify-center bg-black/35 py-10 border-none min-w-full min-h-screen rounded-none" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
                 {/* Kiri Atas: Judul & Kategori */}
-                <div className="absolute top-4 left-6 text-white text-sm md:text-base font-semibold">
-                  {modalImage?.category.toUpperCase()} - <DialogTitle className="inline">{modalImage?.title}</DialogTitle>
+                <div className="absolute top-8 md:top-4 left-6 text-white text-sm md:text-base font-semibold">
+                  <DialogTitle className="inline">{modalImage?.title}</DialogTitle>
                 </div>
 
                 {/* Kanan Atas: Action */}
-                <div className="absolute top-4 right-6 flex gap-6">
+                <div className="absolute top-8 md:top-4 right-6 flex gap-6">
                   <button className="text-white hover:scale-110 active:scale-90 transition" onClick={() => window.open(modalImage?.src, "_blank")}>
                     <FaSearchPlus className="text-xl md:text-2xl" />
                   </button>
@@ -181,7 +181,7 @@ export default function WeddingGallery() {
                 </motion.div>
 
                 {/* Bawah Tengah */}
-                <div className="absolute bottom-4 text-center w-full text-white text-sm md:text-base">
+                <div className="absolute bottom-8 md:bottom-4 text-center w-full text-white text-sm md:text-base">
                   {selectedImageIndex + 1} dari {filteredItems.length} Foto
                 </div>
               </DialogContent>
