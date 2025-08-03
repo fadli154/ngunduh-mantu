@@ -8,9 +8,19 @@ import { useRef } from "react";
 
 const sacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
+const flowerVariants = {
+  hidden: { opacity: 0, scale: 0.5, y: 50 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { delay: custom * 0.3, duration: 1, ease: easeOut },
+  }),
+};
+
 export default function Home() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0.2 });
 
   const fadeUp = {
     hidden: { opacity: 0, y: 50 },
@@ -31,6 +41,13 @@ export default function Home() {
     },
   };
 
+  const flowers = [
+    { id: 1, src: "/img/flower1.png", x: "left-4 top-20" },
+    { id: 2, src: "/img/flower2.png", x: "right-4 top-48" },
+    { id: 3, src: "/img/flower3.png", x: "left-12 bottom-12" },
+    { id: 4, src: "/img/flower4.png", x: "right-10 bottom-24" },
+  ];
+
   return (
     <div
       key={"info-section"}
@@ -38,6 +55,13 @@ export default function Home() {
       className="relative min-h-screen container flex flex-col items-center justify-center text-secondary-500 dark:text-white2-500 font-sans bg-cover bg-center transition-all duration-300 px-4 pb-2"
       id="home"
     >
+      {/* Animated Flowers */}
+      {flowers.map((flower, i) => (
+        <motion.div key={flower.id} className={`absolute w-12 h-12 2xl:w-20 2xl:h-20 ${flower.x}`} initial="hidden" animate={isInView ? "visible" : "hidden"} variants={flowerVariants} custom={i}>
+          <Image src={flower.src} alt={`flower-${flower.id}`} fill className="object-contain drop-shadow-md" />
+        </motion.div>
+      ))}
+
       <motion.div className="relative z-10 flex flex-col items-center text-center" initial="hidden" animate={isInView ? "show" : "hidden"} variants={fadeUp}>
         <h1
           className={`
@@ -72,7 +96,7 @@ export default function Home() {
             />
             <div className="flex flex-col-reverse mt-3 justify-center items-center relative right-4">
               <p className="text-dark2-600/70 dark:text-white2-500 mt-0 md:mt-2 text-[calc(.6rem+.6vw)] 2xl:text-xl">Putra Dari Bapak Salim & Ibu Multahara</p>
-              <h1 className={`${sacramento.className} text-text-500 text-[calc(1.5rem+1.5vw)]`}>Agung Afriansyah</h1>
+              <h1 className={`${sacramento.className} bg-gradient-to-r from-[#d4af37] via-[#cfc6978f] to-[#b8860b] bg-clip-text text-transparent font-bold text-[calc(1.5rem+1.5vw)]`}>Agung Afriansyah</h1>
             </div>
           </motion.div>
 
@@ -93,7 +117,7 @@ export default function Home() {
             />
             <div className="flex flex-col-reverse mt-3 justify-center items-center relative left-4">
               <p className="text-dark2-600/70 dark:text-white2-500 mt-0 md:mt-2 text-[calc(.6rem+.6vw)] 2xl:text-xl">Putri Dari Bapak Sukarlan & Ibu Darsini</p>
-              <h1 className={`${sacramento.className} text-text-500 text-[calc(1.5rem+1.5vw)]`}>Wenny Tri Landari</h1>
+              <h1 className={`${sacramento.className} bg-gradient-to-r from-[#d4af37] via-[#cfc6978f] to-[#b8860b] bg-clip-text text-transparent font-bold text-[calc(1.5rem+1.5vw)]`}>Wenny Tri Landari</h1>
             </div>
           </motion.div>
         </div>

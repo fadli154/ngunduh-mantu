@@ -32,7 +32,14 @@ const Card = ({ bankName, rek, name }: CardProps) => {
     navigator.clipboard
       .writeText(rek)
       .then(() => {
-        toast.success("Nomor rekening disalin!");
+        toast.success("Nomor rekening disalin!", {
+          // Styling
+          className: "text-white2-500 font-semibold",
+          iconTheme: {
+            primary: "#F79F1BFF",
+            secondary: "#fff",
+          },
+        });
       })
       .catch(() => {
         toast.error("Gagal menyalin nomor rekening");
@@ -89,8 +96,8 @@ const Card = ({ bankName, rek, name }: CardProps) => {
           <div className="absolute top-6 w-full h-10 bg-black" />
           <div className="absolute top-[4.5rem] left-4 right-4 bg-white h-6 rounded" />
           <div className="absolute top-[4.5rem] py-4 w-full bg-white h-6 flex items-center justify-between px-4">
-            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}>No Rek: {rek}</p>
-            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-bold`}>***</p>
+            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}>{rek}</p>
+            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}>***</p>
           </div>
         </div>
       </div>

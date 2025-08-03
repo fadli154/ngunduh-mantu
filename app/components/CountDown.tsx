@@ -43,7 +43,7 @@ export default function Countdown() {
         return (
           <div key={label} className="animate-pop-fade-up">
             <div className="bg-white/10 shadow-sm text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:w-24 2xl:h-22 rounded-full w-18 h-16 md:w-20 lg:w-22 lg:h-20 flex justify-center flex-col items-center md:h-18 backdrop-blur-md">
-              {value}
+              <div className="opacity-75">{value}</div>
               <span className="block text-sm text-white2-500/60 -mt-1">{label}</span>
             </div>
           </div>

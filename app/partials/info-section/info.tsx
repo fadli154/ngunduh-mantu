@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Sacramento } from "next/font/google";
 import AnimatedCard from "@/app/elements/card/AnimatedCard";
-import { FaClock } from "react-icons/fa";
+import { GiDiamondRing } from "react-icons/gi";
 import { MdDateRange } from "react-icons/md";
 
 const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
@@ -57,10 +57,10 @@ export default function EventInfo() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.5 }}>
-            <AnimatedCard icon={<MdDateRange size={40} />} title="Akad Nikah" date="Minggu, 07 September 2025" time="11.00 WIB" />
+            <AnimatedCard icon={<MdDateRange size={40} />} title="Akad Nikah" date="07" day="Minggu" month="September" year="2025" time="11.00 WIB" />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 0.6 }}>
-            <AnimatedCard icon={<FaClock size={40} />} title="Resepsi Nikah" date="Minggu, 07 September 2025" time="12.00 WIB" />
+            <AnimatedCard icon={<GiDiamondRing size={40} />} title="Resepsi Nikah" date="07" day="Minggu" month="September" year="2025" time="12.00 WIB" />
           </motion.div>
         </div>
 
@@ -70,8 +70,8 @@ export default function EventInfo() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="text-sm md:text-md 2xl:text-lg mt-5 bg-[#C5A54EFF]/20 shadow-lg dark:shadow-primary-500/15 p-6 rounded-md text-pretty text-start text-dark2-600/40 dark:text-white2-500/80"
         >
-          <strong className="text-secondary-500 block text-start h-[60%] border-l-3 sm:border-l-4 pl-2 border-secondary-500/90 dark:text-primary-500 text-[calc(.8rem+.6vw)] font-bold mb-3">Informasi Penting</strong> Diharapkan untuk tidak
-          salah alamat dan tanggal. Jika tiba di tempat tanpa tanda-tanda pernikahan, cek ulang jadwal dan lokasi.
+          <strong className=" block text-start h-[60%] border-l-3 sm:border-l-4 pl-2 border-text-500/60 text-text-500/50 text-[calc(.8rem+.6vw)] font-bold mb-3">Informasi Penting</strong> Diharapkan untuk tidak salah alamat dan tanggal.
+          Jika tiba di tempat tanpa tanda-tanda pernikahan, cek ulang jadwal dan lokasi.
         </motion.p>
       </div>
     </section>
