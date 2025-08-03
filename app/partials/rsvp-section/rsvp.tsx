@@ -125,7 +125,7 @@ export default function RSVPSection() {
             Ucapan & Doa
           </label>
           <div className="relative">
-            <FaEnvelopeOpenText className="absolute left-3 top-4 text-gray-400 dark:text-white/40" />
+            <FaEnvelopeOpenText className="absolute left-3 top-3 md:top-4 text-gray-400 dark:text-white/40" />
             <textarea
               id="ucapan"
               name="ucapan"

@@ -3,6 +3,7 @@ import HeroTitle from "@/app/partials/hero-section/HeroTitle";
 import GuestGreeting from "@/app/partials/hero-section/GuestGreeting";
 import Countdown from "@/app/components/CountDown";
 import Button from "@/app/elements/button/Button";
+import { HiMiniArrowLongDown } from "react-icons/hi2";
 
 export default function Hero() {
   return (
@@ -28,10 +29,8 @@ export default function Hero() {
         <p className="mt-4 text-sm sm:text-base 2xl:text-lg text-gray-300/70 tracking-wide">Menuju Hari Bahagia — 7 September 2025</p>
 
         {/* scroll arrow */}
-        <div className="absolute left-1/2 -translate-x-1/2 -bottom-30 md:-bottom-15 2xl:-bottom-25 mt-14 md:mt-8 animate-bounce opacity-50">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
-          </svg>
+        <div className="absolute left-1/2 -translate-x-1/2 border-1 rounded-full -bottom-33 md:-bottom-18 2xl:-bottom-40 mt-14 md:mt-8 animate-bounce opacity-50 py-2">
+          <HiMiniArrowLongDown size={25} />
         </div>
       </div>
 
