@@ -148,7 +148,7 @@ export default function WeddingGallery() {
                 </button>
               </DialogTrigger>
               a
-              <DialogContent showCloseButton={false} className="fixed z-[999] flex items-center justify-center bg-black/30 border-none min-w-full min-h-screen rounded-none" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+              <DialogContent showCloseButton={false} className="fixed z-[999] flex items-center justify-center bg-black/35 border-none min-w-full min-h-screen rounded-none" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
                 {/* Kiri Atas: Judul & Kategori */}
                 <div className="absolute top-4 left-6 text-white text-sm md:text-base font-semibold">
                   {modalImage?.category.toUpperCase()} - <DialogTitle className="inline">{modalImage?.title}</DialogTitle>

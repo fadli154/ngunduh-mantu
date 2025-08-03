@@ -29,8 +29,8 @@ export default function Hero() {
         <p className="mt-4 text-sm sm:text-base 2xl:text-lg text-gray-300/70 tracking-wide">Menuju Hari Bahagia — 7 September 2025</p>
 
         {/* scroll arrow */}
-        <div className="absolute left-1/2 -translate-x-1/2 border-1 rounded-full -bottom-33 md:-bottom-18 2xl:-bottom-40 mt-14 md:mt-8 animate-bounce opacity-50 py-2">
-          <HiMiniArrowLongDown size={25} />
+        <div className="absolute left-1/2 -translate-x-1/2 border-1 rounded-full -bottom-33 md:-bottom-18 2xl:-bottom-40 mt-14 md:mt-8 animate-bounce opacity-35 py-2">
+          <HiMiniArrowLongDown size={23} />
         </div>
       </div>
 

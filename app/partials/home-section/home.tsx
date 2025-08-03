@@ -42,10 +42,10 @@ export default function Home() {
   };
 
   const flowers = [
-    { id: 1, src: "/img/flower1.png", x: "-left-20 -top-8", translate: "rotate-90" },
-    { id: 2, src: "/img/flower1.png", x: "-right-20 -top-8", translate: "-rotate-90" },
-    { id: 3, src: "/img/flower1.png", x: "-left-20 -bottom-28", translate: "rotate-100" },
-    { id: 4, src: "/img/flower1.png", x: "-right-20 -bottom-28", translate: "-rotate-100" },
+    { id: 1, src: "/img/flower1.png", x: "-left-18 -top-8", translate: "rotate-90" },
+    { id: 2, src: "/img/flower1.png", x: "-right-18 -top-8", translate: "-rotate-90" },
+    { id: 3, src: "/img/flower1.png", x: "-left-18 -bottom-15 md:-bottom-28", translate: "rotate-100" },
+    { id: 4, src: "/img/flower1.png", x: "-right-18 -bottom-15 md:-bottom-28", translate: "-rotate-100" },
   ];
 
   return (
