@@ -29,6 +29,10 @@ export default function CommentForm() {
       setSent(true);
       setForm({ nama: "", pesan: "" });
       toast.success("Komentar berhasil dikirim!");
+      // Reset tombol setelah 3 detik
+      setTimeout(() => {
+        setSent(false);
+      }, 2500);
     } catch (err) {
       console.error(err);
     }

@@ -103,7 +103,7 @@ export default function CommentList() {
     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl w-full mx-auto mt-6">
       <div ref={containerRef} className="max-h-[350px] overflow-y-auto overflow-x-hidden w-full space-y-4 pr-1">
         <AnimatePresence mode="popLayout">
-          {comments.length === 0 && <p className="text-center text-gray-500 dark:text-white/60 -mr-1">Belum ada komentar.</p>}
+          {comments.length === 0 && <p className="text-center text-sm text-gray-500 dark:text-white/60 -mr-1">Belum ada komentar.</p>}
           {comments.map((k) => (
             <motion.div
               key={k.id}
@@ -112,7 +112,7 @@ export default function CommentList() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="bg-white dark:bg-dark2-600/60 p-4 rounded-xl shadow border border-gray-200 dark:border-gray-600 relative w-full"
+              className="bg-white dark:bg-dark2-600/60 p-4 rounded-xl shadow-sm dark:shadow-text-500/30 border border-text-500/30 dark:border-text-600 relative w-full"
             >
               <div className="flex justify-between items-center mb-6">
                 <p className="font-semibold text-gray-800 dark:text-white ">{k.nama}</p>
@@ -122,7 +122,7 @@ export default function CommentList() {
               {editingId === k.id ? (
                 <div>
                   <textarea
-                    className="w-full bg-white dark:bg-dark2-600 border border-gray-300 dark:border-gray-500 rounded px-4 py-6 text-sm text-gray-800 dark:text-white"
+                    className="w-full bg-white dark:bg-dark2-600 border border-text-300 dark:border-text-500 rounded px-4 py-6 text-sm text-text-800 dark:text-white"
                     value={editedText}
                     onChange={(e) => setEditedText(e.target.value)}
                   />

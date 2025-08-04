@@ -23,7 +23,7 @@ export default function CommentSection() {
         <p className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]">Tinggalkan ucapan, kesan, atau doa untuk kami.</p>
       </div>
       <CommentForm />
-      <h1 key="title" className="text-md font-medium pt-6 text-[#c7a47a] tracking-wide uppercase text-center">
+      <h1 key="title" className="text-md font-bold pt-6 text-[#c7a47a] tracking-wide uppercase text-center">
         Komentar
       </h1>
       <CommentList />

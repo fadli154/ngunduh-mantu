@@ -6,6 +6,7 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import { FaUser, FaEnvelopeOpenText } from "react-icons/fa";
 import { MdEventAvailable } from "react-icons/md";
+import toast from "react-hot-toast";
 
 const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
@@ -29,22 +30,27 @@ export default function RSVPSection() {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
           nama: form.nama,
           hadir: form.hadir,
           ucapan: form.ucapan,
         },
-        "YOUR_PUBLIC_KEY"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
       .then(() => {
         setSent(true);
         setLoading(false);
         setForm({ nama: "", hadir: "Ya", ucapan: "" });
+        toast.success("Email berhasil dikirim!");
+        // Reset tombol setelah 3 detik
+        setTimeout(() => {
+          setSent(false);
+        }, 2500);
       })
       .catch((error) => {
-        console.error("Gagal kirim email:", error);
+        console.error("Gagal kirim email:", error?.text || error?.message || error);
         setLoading(false);
       });
   };
@@ -80,7 +86,7 @@ export default function RSVPSection() {
       >
         {/* Nama Lengkap */}
         <div className="relative">
-          <label htmlFor="nama" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 2xl:text-lg">
+          <label htmlFor="nama" className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-200 2xl:text-lg">
             Nama Lengkap
           </label>
           <div className="relative">
@@ -93,14 +99,14 @@ export default function RSVPSection() {
               onChange={handleChange}
               placeholder="Contoh: Budi Santoso"
               required
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all"
             />
           </div>
         </div>
 
         {/* Kehadiran (Dropdown) */}
         <div className="relative">
-          <label htmlFor="hadir" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 2xl:text-lg">
+          <label htmlFor="hadir" className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-200 2xl:text-lg">
             Konfirmasi Kehadiran
           </label>
           <div className="relative">
@@ -111,7 +117,7 @@ export default function RSVPSection() {
               value={form.hadir}
               onChange={handleChange}
               required
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all appearance-none"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all appearance-none"
             >
               <option value="Ya">Hadir</option>
               <option value="Tidak">Tidak Hadir</option>
@@ -121,7 +127,7 @@ export default function RSVPSection() {
 
         {/* Ucapan & Doa */}
         <div className="relative">
-          <label htmlFor="ucapan" className="block mb-1 text-sm font-semibold text-gray-700 dark:text-gray-200 2xl:text-lg">
+          <label htmlFor="ucapan" className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-200 2xl:text-lg">
             Ucapan & Doa
           </label>
           <div className="relative">
@@ -134,7 +140,7 @@ export default function RSVPSection() {
               onChange={handleChange}
               placeholder="Sampaikan ucapan atau doa terbaik Anda..."
               required
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all resize-none"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all resize-none"
             />
           </div>
         </div>
