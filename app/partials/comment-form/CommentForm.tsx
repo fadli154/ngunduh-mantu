@@ -48,8 +48,8 @@ export default function CommentForm() {
       className="bg-white dark:bg-dark2-600/80 p-6 md:p-8 rounded-2xl shadow-md border-t-2 border-[#d4af37] space-y-6 max-w-xl w-full mx-auto dark:shadow-text-500/20"
     >
       <div className="relative">
-        <label className="text-sm font-semibold text-gray-700 dark:text-white mb-1 block">Nama</label>
-        <FaUserEdit className="absolute left-3 top-[46.5px] -translate-y-1/2 text-gray-400" />
+        <label className="text-sm font-semibold text-gray-700 dark:text-white mb-2 block 2xl:text-lg">Nama</label>
+        <FaUserEdit className="absolute 2xl:scale-120 left-4 2xl:left-[18px] top-[50.5px] 2xl:top-[64px] -translate-y-1/2 text-gray-400/50" />
         <input
           name="nama"
           value={form.nama}
@@ -57,13 +57,13 @@ export default function CommentForm() {
           maxLength={45}
           placeholder="Contoh: Fadli"
           required
-          className="pl-10 pr-4 py-3 rounded-lg border w-full dark:border-gray-600 text-sm bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-gold focus:outline-none"
+          className="pl-10 2xl:pl-11 pr-4 py-3 rounded-lg border w-full border-text-500/25 text-sm bg-white/90 dark:bg-dark2-600 2xl:text-lg text-gray-800 dark:text-white focus:ring-2 focus:ring-gold focus:outline-none ring-text-500/40 2xl:placeholder:text-lg placeholder:opacity-90"
         />
       </div>
 
       <div className="relative">
-        <label className="text-sm font-semibold text-gray-700 dark:text-white mb-1 block">Pesan / Doa</label>
-        <FaCommentDots className="absolute left-3 top-[40px] text-gray-400" />
+        <label className="text-sm font-semibold text-gray-700 dark:text-white mb-2 block 2xl:text-lg">Pesan / Doa</label>
+        <FaCommentDots className="absolute left-3 2xl:left-[14px] top-[44px] 2xl:top-[58px] text-gray-400/50" />
         <textarea
           name="pesan"
           value={form.pesan}
@@ -72,7 +72,7 @@ export default function CommentForm() {
           maxLength={200}
           placeholder="Sampaikan ucapan atau doa terbaik..."
           required
-          className="pl-10 pr-4 py-3 rounded-lg border w-full dark:border-gray-600 text-sm bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-gold focus:outline-none resize-none"
+          className="pl-10 pr-4 py-3 2xl:text-lg rounded-lg border w-full border-text-500/25 text-sm bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-gold focus:outline-none ring-text-500/40 resize-none"
         />
       </div>
 

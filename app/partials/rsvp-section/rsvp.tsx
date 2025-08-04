@@ -99,7 +99,7 @@ export default function RSVPSection() {
               onChange={handleChange}
               placeholder="Contoh: Budi Santoso"
               required
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold ring-text-500/30 transition-all"
             />
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function RSVPSection() {
               value={form.hadir}
               onChange={handleChange}
               required
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all appearance-none"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold ring-text-500/30 transition-all appearance-none"
             >
               <option value="Ya">Hadir</option>
               <option value="Tidak">Tidak Hadir</option>
@@ -140,7 +140,7 @@ export default function RSVPSection() {
               onChange={handleChange}
               placeholder="Sampaikan ucapan atau doa terbaik Anda..."
               required
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold transition-all resize-none"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold ring-text-500/30 transition-all resize-none"
             />
           </div>
         </div>

@@ -100,7 +100,7 @@ export default function CommentList() {
   };
 
   return (
-    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl w-full mx-auto mt-6">
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl w-full mx-auto mt-4">
       <div ref={containerRef} className="max-h-[350px] overflow-y-auto overflow-x-hidden w-full space-y-4 pr-1">
         <AnimatePresence mode="popLayout">
           {comments.length === 0 && <p className="text-center text-sm text-gray-500 dark:text-white/60 -mr-1">Belum ada komentar.</p>}
@@ -115,8 +115,8 @@ export default function CommentList() {
               className="bg-white dark:bg-dark2-600/60 p-4 rounded-xl shadow-sm dark:shadow-text-500/30 border border-text-500/30 dark:border-text-600 relative w-full"
             >
               <div className="flex justify-between items-center mb-6">
-                <p className="font-semibold text-gray-800 dark:text-white ">{k.nama}</p>
-                <span className="text-xs text-gray-500 dark:text-white/60">{formatDate(k.waktu)}</span>
+                <p className="font-semibold text-gray-800 dark:text-white 2xl:text-lg">{k.nama}</p>
+                <span className="text-xs text-gray-500/70 dark:text-white/60 2xl:text-sm">{formatDate(k.waktu)}</span>
               </div>
 
               {editingId === k.id ? (
@@ -148,13 +148,13 @@ export default function CommentList() {
                       setEditingId(k.id);
                       setEditedText(k.pesan);
                     }}
-                    className="text-blue-600 hover:text-blue-800"
+                    className="text-text-500/80 hover:text-text-500"
                     title="Edit"
                   >
-                    <FaEdit size={19} />
+                    <FaEdit size={19} className="cursor-pointer" />
                   </button>
                   <button onClick={() => handleDelete(k.id)} className="text-red-500 pt-[1px] hover:text-red-700" title="Hapus">
-                    <FaTrashAlt size={16} className="text-red-500 hover:text-red-700" />
+                    <FaTrashAlt size={16} className="text-red-500/70 hover:text-red-700/70 cursor-pointer" />
                   </button>
                 </div>
               )}

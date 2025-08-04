@@ -104,7 +104,7 @@ const CarouselControl = ({ type, title, onClick }: CarouselControlProps) => (
     onClick={onClick}
     className={`w-10 h-10 md:w-12 md:h-12 mx-2 flex items-center justify-center bg-zinc-500/10 backdrop-blur-2xl dark:bg-zinc-700/40 rounded-full mt-2 md:mt-1 hover:-translate-y-0.5 transition ${type === "previous" ? "rotate-180" : ""}`}
   >
-    <TbArrowNarrowRightDashed className="text-neutral-600 dark:text-neutral-200/70 w-6 h-6 md:w-8 md:h-8" />
+    <TbArrowNarrowRightDashed className="text-text-500/40 dark:text-text-500/70 w-6 h-6 md:w-8 md:h-8" />
   </button>
 );
 
