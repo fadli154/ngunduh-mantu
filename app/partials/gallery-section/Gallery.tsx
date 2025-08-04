@@ -18,11 +18,16 @@ const categories = [
 ];
 
 const slideData = [
-  { id: "1", title: "Mystic Mountains", button: "Detail", src: "/img/moment.jpg", category: "moment" },
-  { id: "2", title: "Urban Dreams", button: "Detail", src: "/img/moment1.jpg", category: "moment" },
-  { id: "3", title: "Neon Nights", button: "Detail", src: "/img/moment2.jpg", category: "moment" },
-  { id: "4", title: "Desert Whispers", button: "Detail", src: "/img/hero3.jpg", category: "family" },
-  { id: "5", title: "Golden Glow", button: "Detail", src: "/img/hero2.jpg", category: "family" },
+  { id: "1", title: "Moment", button: "Detail", src: "/img/moment.jpg", category: "moment" },
+  { id: "2", title: "Moment", button: "Detail", src: "/img/moment1.jpg", category: "moment" },
+  { id: "3", title: "Moment", button: "Detail", src: "/img/moment2.jpg", category: "moment" },
+  { id: "4", title: "Keluarga", button: "Detail", src: "/img/hero3.jpg", category: "family" },
+  { id: "5", title: "Keluarga", button: "Detail", src: "/img/hero2.jpg", category: "family" },
+  { id: "6", title: "Keluarga", button: "Detail", src: "/img/keluarga.jpg", category: "family" },
+  { id: "7", title: "Keluarga", button: "Detail", src: "/img/keluarga2.jpg", category: "family" },
+  { id: "8", title: "Keluarga", button: "Detail", src: "/img/keluarga3.jpg", category: "family" },
+  { id: "9", title: "Moment", button: "Detail", src: "/img/keluarga4.jpg", category: "moment" },
+  { id: "10", title: "Moment", button: "Detail", src: "/img/moment3.jpg", category: "moment" },
 ];
 
 export default function WeddingGallery() {
@@ -67,7 +72,7 @@ export default function WeddingGallery() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-10 transition-colors duration-300" id="gallery">
+    <section className="py-18 md:py-20 px-4 sm:px-6 lg:px-10 transition-colors duration-300" id="gallery">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-4">
           <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-md font-medium mb-2 text-[#c7a47a] tracking-wide uppercase">
@@ -100,7 +105,7 @@ export default function WeddingGallery() {
         <Carousel slides={filteredItems} current={selectedImageIndex} onSlideClick={handleSlideClick} onPrevious={goPrev} onNext={goNext} />
 
         {/* Thumbnail */}
-        <div className="flex gap-2 mt-20 sm:gap-3 md:gap-4 overflow-x-auto justify-center scrollbar-hidden snap-x scroll-pl-4">
+        <div className="flex gap-2 mt-20 md:mt-22 sm:gap-3 md:gap-4 overflow-x-auto justify-center scrollbar-hidden snap-x scroll-pl-4">
           {filteredItems.map((item, index) => (
             <button
               key={item.id}

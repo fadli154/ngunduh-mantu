@@ -52,7 +52,7 @@ const Card = ({ bankName, rek, name }: CardProps) => {
         {/* Front Side */}
         <div className={`absolute w-full h-full rounded-xl bg-gradient-to-br ${gradient} overflow-hidden shadow-xl [backface-visibility:hidden]`}>
           <div className="absolute top-4 left-4 text-left space-y-1">
-            <p className="text-sm lg:text-lg font-semibold">{bankName}</p>
+            <p className="text-sm lg:text-lg font-bold">{bankName}</p>
             <p className="text-xs -mt-2 text-white/80">Kartu Virtual</p>
           </div>
 

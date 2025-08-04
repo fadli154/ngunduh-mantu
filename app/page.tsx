@@ -9,6 +9,7 @@ import Gift from "./partials/gift-section/Gift";
 import FooterSection from "./partials/footer-section/Footer";
 import Home from "./partials/home-section/home";
 import Info from "./partials/info-section/info";
+import CommentSection from "./partials/comment-form/CommentSection";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
         <Home />
         <Info />
         <RSVPSection />
+        <CommentSection />
         <Gift />
         <Gallery />
         <FooterSection />

@@ -5,6 +5,7 @@ import { Sacramento } from "next/font/google";
 import AnimatedCard from "@/app/elements/card/AnimatedCard";
 import { GiDiamondRing } from "react-icons/gi";
 import { MdDateRange } from "react-icons/md";
+import { GrMapLocation } from "react-icons/gr";
 
 const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
@@ -40,7 +41,10 @@ export default function EventInfo() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]"
           >
-            <strong>Alamat:</strong> Perumahan Total Persada, Jl. Maos Blok H9 No. 34 RT 003/ RW 008 Kel. Gembor, Kec. Periuk, Kota Tangerang
+            <strong>
+              <GrMapLocation className="inline mr-1 pb-2" size={30} />
+            </strong>
+            Perumahan Total Persada, Jl. Maos Blok H9 No. 34 RT 003/ RW 008 Kel. Gembor, Kec. Periuk, Kota Tangerang
           </motion.p>
         </div>
 
@@ -68,7 +72,7 @@ export default function EventInfo() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-sm md:text-md 2xl:text-lg mt-5 bg-gradient-to-r from-[#C5A54EFF]/20 via-[#f1e189]/20 to-[#b8860b]/20 shadow-lg dark:shadow-primary-500/15 p-6 rounded-md text-pretty text-start text-dark2-600/40 dark:text-white2-500/80"
+          className="text-sm md:text-md 2xl:text-lg mt-5 bg-gradient-to-r from-[#C5A54EFF]/20 via-[#f1e189]/20 to-[#CC960CFF]/20 shadow-lg dark:shadow-primary-500/15 p-6 rounded-md text-pretty text-start text-dark2-600/40 dark:text-white2-500/80"
         >
           <strong className=" block text-start h-[60%] border-l-3 sm:border-l-4 pl-2 border-text-500/60 text-text-500/50 text-[calc(.8rem+.6vw)] font-bold mb-3">Informasi Penting</strong> Diharapkan untuk tidak salah alamat dan tanggal.
           Jika tiba di tempat tanpa tanda-tanda pernikahan, cek ulang jadwal dan lokasi.

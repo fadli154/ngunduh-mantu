@@ -44,8 +44,8 @@ export default function Home() {
   const flowers = [
     { id: 1, src: "/img/flower1.png", x: "-left-19 md:-left-21 top-75 md:-top-12", translate: "rotate-80 md:rotate-90" },
     { id: 2, src: "/img/flower1.png", x: "-right-19 md:-right-21 top-75 md:-top-12", translate: "-rotate-80 md:-rotate-90" },
-    { id: 3, src: "/img/flower1.png", x: "-left-19 md:-left-21 bottom-65 md:-bottom-28", translate: "rotate-100" },
-    { id: 4, src: "/img/flower1.png", x: "-right-19 md:-right-21 bottom-65 md:-bottom-28", translate: "-rotate-100" },
+    { id: 3, src: "/img/flower1.png", x: "-left-19 md:-left-21 bottom-68 md:-bottom-28", translate: "rotate-100" },
+    { id: 4, src: "/img/flower1.png", x: "-right-19 md:-right-21 bottom-68 md:-bottom-28", translate: "-rotate-100" },
   ];
 
   return (
@@ -57,7 +57,14 @@ export default function Home() {
     >
       {/* Animated Flowers */}
       {flowers.map((flower, i) => (
-        <motion.div key={flower.id} className={`absolute w-35 h-35 lg:w-60 lg:h-60 2xl:w-60 2xl:h-60 ${flower.x} ${flower.translate}`} initial="hidden" animate={isInView ? "visible" : "hidden"} variants={flowerVariants} custom={i}>
+        <motion.div
+          key={flower.id}
+          className={`absolute dark:brightness-75 w-35 h-35 lg:w-60 lg:h-60 2xl:w-60 2xl:h-60 ${flower.x} ${flower.translate}`}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={flowerVariants}
+          custom={i}
+        >
           <Image src={flower.src} alt={`flower-${flower.id}`} fill className="object-contain drop-shadow-md" />
         </motion.div>
       ))}

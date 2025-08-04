@@ -30,13 +30,13 @@ export default function GiftSection() {
             Wedding <span className="text-dark2-600/20 dark:text-white2-500">Gift</span>
           </motion.h2>
           <p className="text-sm md:text-md mt-1 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[90%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]">
-            Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat tekan kartu ini
+            Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat ketuk kartu ini untuk menyalin nomor rekening.
           </p>
         </div>
 
         <div className="w-full flex flex-col md:flex-row justify-center items-center gap-5">
           <FlipCard bankName="BCA" rek="6275 1231 81" name="Wenny Tri Landari" />
-          <FlipCard bankName="Mandiri" rek="1760 0055 413 52" name="Agung Afrimansyah" />
+          <FlipCard bankName="Mandiri" rek="1760 0055 413 52" name="Agung Afriansyah" />
         </div>
       </div>
     </section>
