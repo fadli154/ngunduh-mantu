@@ -61,14 +61,14 @@ const Slide = ({ slide, index, current, onClick }: SlideProps) => {
         onClick={() => onClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white w-[70vmin] h-[70vmin] mx-[4vmin] z-10 cursor-pointer"
+        className="flex flex-1 flex-col items-center justify-center relative text-center text-white w-[70vmin] h-[70vmin] mx-[4vmin] z-10 cursor-pointer bg-transparent"
         style={{
           transform: current !== index ? "scale(0.98) rotateX(8deg)" : "scale(1) rotateX(0deg)",
           transformOrigin: "bottom",
         }}
       >
         <div
-          className="absolute top-0 left-0 w-full h-full bg-[#1D1F2F] rounded-[1%] overflow-hidden"
+          className="absolute top-0 left-0 w-full bg-transparent rounded-lg h-full overflow-hidden"
           style={{
             transform: current === index ? "translate3d(calc(var(--x)/30), calc(var(--y)/30), 0)" : "none",
           }}
@@ -78,7 +78,7 @@ const Slide = ({ slide, index, current, onClick }: SlideProps) => {
             alt={slide.title}
             width={1200} // ukuran besar asli
             height={800}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full rounded-lg bg-transparent object-cover"
             style={{ opacity: current === index ? 1 : 0.5 }}
             loading="eager"
             decoding="sync"
@@ -102,7 +102,7 @@ const CarouselControl = ({ type, title, onClick }: CarouselControlProps) => (
   <button
     title={title}
     onClick={onClick}
-    className={`w-12 h-12 mx-2 flex items-center justify-center bg-neutral-200 dark:bg-neutral-800 rounded-full mt-2 md:mt-1 hover:-translate-y-0.5 transition ${type === "previous" ? "rotate-180" : ""}`}
+    className={`w-12 h-12 mx-2 flex items-center justify-center bg-zinc-500/10 backdrop-blur-2xl dark:bg-zinc-700/40 rounded-full mt-2 md:mt-1 hover:-translate-y-0.5 transition ${type === "previous" ? "rotate-180" : ""}`}
   >
     <TbArrowNarrowRightDashed className="text-neutral-600 dark:text-neutral-200 w-8 h-8" />
   </button>

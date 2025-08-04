@@ -77,7 +77,7 @@ export default function WeddingGallery() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className={`text-[2.6rem] sm:text-7xl md:pb-5 font-bold bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] bg-clip-text text-transparent ${sacramento.className}`}
+            className={`text-[2.6rem] sm:text-7xl sm:pb-5 font-bold bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] bg-clip-text text-transparent ${sacramento.className}`}
           >
             Kenangan <span className="text-dark2-600/20 dark:text-white2-500">Indah</span>
           </motion.h2>
@@ -88,7 +88,9 @@ export default function WeddingGallery() {
             <button
               key={cat.id}
               onClick={() => handleCategoryChange(cat.id)}
-              className={`px-4 py-2 text-sm font-medium transition-all border-b-2 ${selectedCategory === cat.id ? "text-[#c7a47a] border-[#c7a47a]" : "text-gray-500 dark:text-gray-400 border-transparent hover:text-[#c7a47a]"}`}
+              className={`px-4 py-2 text-sm lg:text-base 2xl:text-lg font-medium transition-all border-b-2 ${
+                selectedCategory === cat.id ? "text-[#c7a47a] border-[#c7a47a]" : "text-gray-500 dark:text-gray-400 border-transparent hover:text-[#c7a47a]"
+              }`}
             >
               {cat.label}
             </button>
@@ -98,14 +100,14 @@ export default function WeddingGallery() {
         <Carousel slides={filteredItems} current={selectedImageIndex} onSlideClick={handleSlideClick} onPrevious={goPrev} onNext={goNext} />
 
         {/* Thumbnail */}
-        <div className="flex gap-2 mt-21 sm:gap-3 md:gap-4 overflow-x-auto justify-center scrollbar-hidden snap-x scroll-pl-4">
+        <div className="flex gap-2 mt-22 sm:gap-3 md:gap-4 overflow-x-auto justify-center scrollbar-hidden snap-x scroll-pl-4">
           {filteredItems.map((item, index) => (
             <button
               key={item.id}
               onClick={() => setSelectedImageIndex(index)}
               className={`border-2 rounded-md overflow-hidden snap-start transition-all duration-300 ${index === selectedImageIndex ? "border-[#c7a47a]" : "border-transparent hover:border-[#c7a47a] focus:border-[#c7a47a]"}`}
             >
-              <Image src={item.src} alt={item.title} width={100} height={70} className="w-20 h-16 sm:w-24 sm:h-20 object-cover" />
+              <Image src={item.src} alt={item.title} width={100} height={70} className="w-20 h-16 sm:w-24 sm:h-20 2xl:w-30 2xl:h-26 object-cover" />
             </button>
           ))}
         </div>

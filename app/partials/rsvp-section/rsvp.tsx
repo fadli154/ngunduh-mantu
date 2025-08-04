@@ -76,7 +76,7 @@ export default function RSVPSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         onSubmit={handleSubmit}
-        className="max-w-xl mx-auto mt-4 bg-white dark:bg-dark2-600/80 rounded-2xl shadow-lg dark:shadow-primary-500/20 px-4 sm:px-6 md:px-10 py-8 border-t-2 border-[#d4af37] sm:py-10 space-y-6 text-left transition-colors duration-300"
+        className="max-w-xl mx-auto mt-4 bg-white dark:bg-dark2-600/80 rounded-2xl shadow-lg dark:shadow-primary-500/15 px-4 sm:px-6 md:px-10 py-8 border-t-2 border-[#d4af37] sm:py-10 space-y-6 text-left transition-colors duration-300"
       >
         {/* Nama Lengkap */}
         <div className="relative">
