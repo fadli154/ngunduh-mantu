@@ -112,7 +112,7 @@ export default function WeddingGallery() {
 
         {/* Modal */}
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent showCloseButton={false} className="fixed z-[999] flex items-center justify-center bg-black/35 py-10 border-none min-w-full min-h-screen rounded-none">
+          <DialogContent showCloseButton={false} className="fixed z-[999] flex items-center justify-center bg-black/45 py-10 border-none min-w-full min-h-screen rounded-none">
             <div className="absolute top-8 left-6 text-white text-lg md:text-xl font-semibold">
               <DialogTitle>{modalImage?.title}</DialogTitle>
             </div>
@@ -126,9 +126,9 @@ export default function WeddingGallery() {
                 {" "}
                 <FaDownload className="text-xl" />{" "}
               </a>
-              <button onClick={() => setIsModalOpen(false)} className="text-red-500 hover:rotate-90 transition">
+              <button onClick={() => setIsModalOpen(false)} className="text-red-500 hover:rotate-45 transition">
                 {" "}
-                <FaTimes className="text-xl" />{" "}
+                <FaTimes className="text-2xl" />{" "}
               </button>
             </div>
 
