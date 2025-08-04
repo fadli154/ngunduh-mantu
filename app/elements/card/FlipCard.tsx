@@ -36,7 +36,7 @@ const Card = ({ bankName, rek, name }: CardProps) => {
           // Styling
           className: "text-white2-500 font-semibold",
           iconTheme: {
-            primary: "#F79F1BFF",
+            primary: "linear-gradient(744deg, #B8870BFF 0%, #BBA56EFF 60%, #E4A507FF)",
             secondary: "#fff",
           },
         });

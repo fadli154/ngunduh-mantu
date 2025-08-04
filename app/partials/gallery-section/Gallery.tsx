@@ -100,7 +100,7 @@ export default function WeddingGallery() {
         <Carousel slides={filteredItems} current={selectedImageIndex} onSlideClick={handleSlideClick} onPrevious={goPrev} onNext={goNext} />
 
         {/* Thumbnail */}
-        <div className="flex gap-2 mt-22 sm:gap-3 md:gap-4 overflow-x-auto justify-center scrollbar-hidden snap-x scroll-pl-4">
+        <div className="flex gap-2 mt-20 sm:gap-3 md:gap-4 overflow-x-auto justify-center scrollbar-hidden snap-x scroll-pl-4">
           {filteredItems.map((item, index) => (
             <button
               key={item.id}
