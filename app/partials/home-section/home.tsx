@@ -42,10 +42,10 @@ export default function Home() {
   };
 
   const flowers = [
-    { id: 1, src: "/img/flower1.png", x: "-left-21 top-70 md:-top-8", translate: "rotate-90" },
-    { id: 2, src: "/img/flower1.png", x: "-right-21 top-70 md:-top-8", translate: "-rotate-90" },
-    { id: 3, src: "/img/flower1.png", x: "-left-21 bottom-60 md:-bottom-28", translate: "rotate-100" },
-    { id: 4, src: "/img/flower1.png", x: "-right-21 bottom-60 md:-bottom-28", translate: "-rotate-100" },
+    { id: 1, src: "/img/flower1.png", x: "-left-19 md:-left-21 top-75 md:-top-8", translate: "rotate-80" },
+    { id: 2, src: "/img/flower1.png", x: "-right-19 md:-right-21 top-75 md:-top-8", translate: "-rotate-80" },
+    { id: 3, src: "/img/flower1.png", x: "-left-19 md:-left-21 bottom-65 md:-bottom-28", translate: "rotate-100" },
+    { id: 4, src: "/img/flower1.png", x: "-right-19 md:-right-21 bottom-65 md:-bottom-28", translate: "-rotate-100" },
   ];
 
   return (
