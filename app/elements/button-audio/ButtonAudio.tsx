@@ -33,10 +33,10 @@ export default function ButtonIcon() {
           <Tooltip.Trigger asChild>
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="fixed bottom-4 right-4 z-50 w-12 h-12 rounded-full transition-all duration-200
+              className="fixed bottom-4 right-4 z-50 w-10 2xl:w-12 h-10 2xl:h-12 rounded-full transition-all duration-200
                 bg-white shadow-lg dark:bg-dark2-600 focus:outline-none active:scale-90 hover:scale-105 flex items-center justify-center"
             >
-              <div className="w-14 h-14 animate-spin text-dark2-600/70 dark:text-white2-500">{isPlaying ? <RiDiscLine className="w-full h-full" /> : <FaRegPauseCircle className="w-full h-full" />}</div>
+              <div className="w-12 h-12 2xl:w-14 2xl:h-14 animate-spin text-dark2-600/50 dark:text-white2-500">{isPlaying ? <RiDiscLine className="w-full h-full" /> : <FaRegPauseCircle className="w-full h-full" />}</div>
             </button>
           </Tooltip.Trigger>
 
