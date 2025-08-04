@@ -103,6 +103,7 @@ export default function CommentList() {
     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl w-full mx-auto mt-6">
       <div ref={containerRef} className="max-h-[350px] overflow-y-auto overflow-x-hidden w-full space-y-4 pr-1">
         <AnimatePresence mode="popLayout">
+          {comments.length === 0 && <p className="text-center text-gray-500 dark:text-white/60 -mr-1">Belum ada komentar.</p>}
           {comments.map((k) => (
             <motion.div
               key={k.id}
