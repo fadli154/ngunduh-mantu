@@ -42,8 +42,8 @@ export default function Home() {
   };
 
   const flowers = [
-    { id: 1, src: "/img/flower1.png", x: "-left-19 md:-left-21 top-75 md:-top-8", translate: "rotate-80" },
-    { id: 2, src: "/img/flower1.png", x: "-right-19 md:-right-21 top-75 md:-top-8", translate: "-rotate-80" },
+    { id: 1, src: "/img/flower1.png", x: "-left-19 md:-left-21 top-75 md:-top-12", translate: "rotate-80 md:rotate-90" },
+    { id: 2, src: "/img/flower1.png", x: "-right-19 md:-right-21 top-75 md:-top-12", translate: "-rotate-80 md:-rotate-90" },
     { id: 3, src: "/img/flower1.png", x: "-left-19 md:-left-21 bottom-65 md:-bottom-28", translate: "rotate-100" },
     { id: 4, src: "/img/flower1.png", x: "-right-19 md:-right-21 bottom-65 md:-bottom-28", translate: "-rotate-100" },
   ];
@@ -96,7 +96,7 @@ export default function Home() {
             />
             <div className="flex flex-col-reverse mt-3 justify-center items-center relative right-4">
               <p className="text-dark2-600/70 dark:text-white2-500 mt-0 md:mt-2 text-[calc(.6rem+.6vw)] 2xl:text-xl">Putra Dari Bapak Salim & Ibu Multahara</p>
-              <h1 className={`${sacramento.className} bg-gradient-to-r from-[#d4af37] via-[#cfc6978f] to-[#b8860b] bg-clip-text text-transparent font-bold text-[calc(1.5rem+1.5vw)]`}>Agung Afriansyah</h1>
+              <h1 className={`${sacramento.className} bg-gradient-to-r from-[#d4af37] via-[#cfc6978f] dark:via-[#cfc697] to-[#b8860b] bg-clip-text text-transparent font-bold text-[calc(1.5rem+1.5vw)]`}>Agung Afriansyah</h1>
             </div>
           </motion.div>
 
@@ -117,7 +117,7 @@ export default function Home() {
             />
             <div className="flex flex-col-reverse mt-3 justify-center items-center relative left-4">
               <p className="text-dark2-600/70 dark:text-white2-500 mt-0 md:mt-2 text-[calc(.6rem+.6vw)] 2xl:text-xl">Putri Dari Bapak Sukarlan & Ibu Darsini</p>
-              <h1 className={`${sacramento.className} bg-gradient-to-r from-[#d4af37] via-[#cfc6978f] to-[#b8860b] bg-clip-text text-transparent font-bold text-[calc(1.5rem+1.5vw)]`}>Wenny Tri Landari</h1>
+              <h1 className={`${sacramento.className} bg-gradient-to-r from-[#d4af37] via-[#cfc6978f] dark:via-[#cfc697] to-[#b8860b] bg-clip-text text-transparent font-bold text-[calc(1.5rem+1.5vw)]`}>Wenny Tri Landari</h1>
             </div>
           </motion.div>
         </div>
