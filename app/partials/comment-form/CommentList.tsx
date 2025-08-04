@@ -5,7 +5,7 @@ import { db } from "@/firebase/config";
 import { ref, remove, update, onValue } from "firebase/database";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
-import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 type Komentar = {
   id: string;
@@ -62,14 +62,32 @@ export default function CommentList() {
   };
 
   const handleDelete = async (id: string) => {
-    const confirmed = confirm("Yakin ingin menghapus komentar ini?");
-    if (!confirmed) return;
+    const result = await Swal.fire({
+      title: "Yakin hapus komentar ini?",
+      text: "Komentar tidak bisa dikembalikan!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Ya, hapus!",
+      cancelButtonText: "Batal",
+      backdrop: true,
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
 
-    // Animasi keluar lalu hapus
+    if (!result.isConfirmed) return;
+
+    // Animasi keluar lalu hapus dari UI dulu
     setComments((prev) => prev.filter((c) => c.id !== id));
+
     setTimeout(async () => {
       await remove(ref(db, `komentar/${id}`));
-      toast.success("Komentar berhasil dihapus.");
+      Swal.fire("Berhasil!", "Komentar berhasil dihapus.", "success");
     }, 300);
   };
 
@@ -78,12 +96,12 @@ export default function CommentList() {
       pesan: editedText,
     });
     setEditingId(null);
-    toast.success("Komentar berhasil diedit.");
+    Swal.fire("Berhasil!", "Komentar berhasil diubah.", "success");
   };
 
   return (
-    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl w-full mx-auto mt-10">
-      <div ref={containerRef} className="max-h-[300px] overflow-y-auto space-y-4 pr-1">
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl w-full mx-auto mt-6">
+      <div ref={containerRef} className="max-h-[350px] overflow-y-auto overflow-x-hidden w-full space-y-4 pr-1">
         <AnimatePresence mode="popLayout">
           {comments.map((k) => (
             <motion.div
@@ -93,16 +111,20 @@ export default function CommentList() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="bg-white dark:bg-dark2-600/60 p-4 rounded-xl shadow border border-gray-200 dark:border-gray-600 relative"
+              className="bg-white dark:bg-dark2-600/60 p-4 rounded-xl shadow border border-gray-200 dark:border-gray-600 relative w-full"
             >
-              <div className="flex justify-between items-center mb-1">
-                <p className="font-semibold text-gray-800 dark:text-white">{k.nama}</p>
+              <div className="flex justify-between items-center mb-6">
+                <p className="font-semibold text-gray-800 dark:text-white ">{k.nama}</p>
                 <span className="text-xs text-gray-500 dark:text-white/60">{formatDate(k.waktu)}</span>
               </div>
 
               {editingId === k.id ? (
-                <>
-                  <textarea className="w-full bg-white dark:bg-dark2-500 border border-gray-300 dark:border-gray-500 rounded p-2 text-sm text-gray-800 dark:text-white" value={editedText} onChange={(e) => setEditedText(e.target.value)} />
+                <div>
+                  <textarea
+                    className="w-full bg-white dark:bg-dark2-600 border border-gray-300 dark:border-gray-500 rounded px-4 py-6 text-sm text-gray-800 dark:text-white"
+                    value={editedText}
+                    onChange={(e) => setEditedText(e.target.value)}
+                  />
                   <div className="flex justify-end gap-2 mt-2">
                     <button onClick={() => setEditingId(null)} className="text-xs text-gray-500 hover:text-gray-700">
                       Batal
@@ -111,13 +133,15 @@ export default function CommentList() {
                       Simpan
                     </button>
                   </div>
-                </>
+                </div>
               ) : (
-                <p className="text-sm text-gray-600 dark:text-white/80 mt-1">{k.pesan}</p>
+                <div className={`flex justify-between items-center ${k.userId === localUserId ? "mb-4" : ""}`}>
+                  <p className="text-sm text-gray-600 dark:text-white/80 mt-1 break-all whitespace-pre-wrap">{k.pesan}</p>
+                </div>
               )}
 
               {k.userId === localUserId && editingId !== k.id && (
-                <div className="absolute bottom-4 right-4 flex gap-2 text-sm">
+                <div className="absolute bottom-4 right-4 flex gap-2 text-sm mt-4">
                   <button
                     onClick={() => {
                       setEditingId(k.id);
@@ -126,10 +150,10 @@ export default function CommentList() {
                     className="text-blue-600 hover:text-blue-800"
                     title="Edit"
                   >
-                    <FaEdit />
+                    <FaEdit size={19} />
                   </button>
-                  <button onClick={() => handleDelete(k.id)} className="text-red-500 hover:text-red-700" title="Hapus">
-                    <FaTrashAlt />
+                  <button onClick={() => handleDelete(k.id)} className="text-red-500 pt-[1px] hover:text-red-700" title="Hapus">
+                    <FaTrashAlt size={16} className="text-red-500 hover:text-red-700" />
                   </button>
                 </div>
               )}

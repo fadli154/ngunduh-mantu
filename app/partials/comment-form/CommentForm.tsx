@@ -41,15 +41,16 @@ export default function CommentForm() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-white dark:bg-dark2-600/80 p-6 md:p-8 rounded-2xl shadow-lg border-t-2 border-[#d4af37] space-y-6 max-w-xl w-full mx-auto"
+      className="bg-white dark:bg-dark2-600/80 p-6 md:p-8 rounded-2xl shadow-md border-t-2 border-[#d4af37] space-y-6 max-w-xl w-full mx-auto dark:shadow-text-500/20"
     >
       <div className="relative">
         <label className="text-sm font-semibold text-gray-700 dark:text-white mb-1 block">Nama</label>
-        <FaUserEdit className="absolute left-3 top-[47px] -translate-y-1/2 text-gray-400" />
+        <FaUserEdit className="absolute left-3 top-[46.5px] -translate-y-1/2 text-gray-400" />
         <input
           name="nama"
           value={form.nama}
           onChange={handleChange}
+          maxLength={45}
           placeholder="Contoh: Fadli"
           required
           className="pl-10 pr-4 py-3 rounded-lg border w-full dark:border-gray-600 text-sm bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-gold focus:outline-none"
@@ -64,6 +65,7 @@ export default function CommentForm() {
           value={form.pesan}
           onChange={handleChange}
           rows={4}
+          maxLength={200}
           placeholder="Sampaikan ucapan atau doa terbaik..."
           required
           className="pl-10 pr-4 py-3 rounded-lg border w-full dark:border-gray-600 text-sm bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white focus:ring-2 focus:ring-gold focus:outline-none resize-none"

@@ -22,9 +22,9 @@ export default function HomePage() {
         <Home />
         <Info />
         <RSVPSection />
-        <CommentSection />
         <Gift />
         <Gallery />
+        <CommentSection />
         <FooterSection />
       </div>
       <ButtonIcon />

@@ -24,9 +24,9 @@ const slideData = [
   { id: "4", title: "Keluarga", button: "Detail", src: "/img/hero3.jpg", category: "family" },
   { id: "5", title: "Keluarga", button: "Detail", src: "/img/hero2.jpg", category: "family" },
   { id: "6", title: "Keluarga", button: "Detail", src: "/img/keluarga.jpg", category: "family" },
-  { id: "7", title: "Keluarga", button: "Detail", src: "/img/keluarga2.jpg", category: "family" },
-  { id: "8", title: "Keluarga", button: "Detail", src: "/img/keluarga3.jpg", category: "family" },
-  { id: "9", title: "Moment", button: "Detail", src: "/img/keluarga4.jpg", category: "moment" },
+  { id: "7", title: "Keluarga", button: "Detail", src: "/img/keluargaa2.jpg", category: "family" },
+  { id: "8", title: "Keluarga", button: "Detail", src: "/img/keluargaa3.jpg", category: "family" },
+  { id: "9", title: "Moment", button: "Detail", src: "/img/keluargaa4.jpg", category: "moment" },
   { id: "10", title: "Moment", button: "Detail", src: "/img/moment3.jpg", category: "moment" },
 ];
 

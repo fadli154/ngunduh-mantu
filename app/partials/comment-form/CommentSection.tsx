@@ -6,7 +6,7 @@ const sacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
 export default function CommentSection() {
   return (
-    <section className="pb-20 px-4 sm:px-6 md:px-10 2xl:px-32">
+    <section className="py-20 px-4 sm:px-6 md:px-10 2xl:px-32 bg-primary-500/10 dark:bg-dark2-600">
       <div className="max-w-xl mx-auto text-center flex flex-col items-center justify-center">
         {/* Judul */}
         <h2
@@ -23,6 +23,9 @@ export default function CommentSection() {
         <p className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]">Tinggalkan ucapan, kesan, atau doa untuk kami.</p>
       </div>
       <CommentForm />
+      <h1 key="title" className="text-md font-medium pt-6 text-[#c7a47a] tracking-wide uppercase text-center">
+        Komentar
+      </h1>
       <CommentList />
     </section>
   );
