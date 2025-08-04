@@ -86,12 +86,7 @@ const Slide = ({ slide, index, current, onClick }: SlideProps) => {
 
           {current === index && <div className="absolute inset-0 bg-black/30" />}
         </div>
-        <article className={`relative p-[4vmin] ${current === index ? "opacity-100 visible" : "opacity-0 invisible"} transition-opacity duration-1000 ease-in-out`}>
-          <h2 className="text-lg md:text-2xl lg:text-4xl opacity-70 font-semibold">{slide.title}</h2>
-          <div className="flex justify-center">
-            <button className="mt-6 px-4 py-2 text-black bg-white/20 backdrop-blur-md shadow-md rounded-2xl hover:shadow-lg text-xs sm:text-sm font-semibold tracking-wide">{slide.button}</button>
-          </div>
-        </article>
+        <article className={`relative p-[4vmin] ${current === index ? "opacity-100 visible" : "opacity-0 invisible"} transition-opacity duration-1000 ease-in-out`}></article>
       </li>
     </div>
   );
