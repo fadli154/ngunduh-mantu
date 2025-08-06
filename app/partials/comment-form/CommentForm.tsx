@@ -6,6 +6,7 @@ import { db } from "@/firebase/config";
 import { FaUserEdit, FaCommentDots } from "react-icons/fa";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
+import { HiPaperAirplane } from "react-icons/hi2";
 
 export default function CommentForm() {
   const [form, setForm] = useState({ nama: "", pesan: "" });
@@ -77,8 +78,13 @@ export default function CommentForm() {
       </div>
 
       <div className="text-center">
-        <button type="submit" disabled={loading} className="bg-gradient-to-r from-[#d4af37] to-[#b8870b] hover:brightness-110 text-white font-semibold px-6 py-2.5 rounded-full transition-all shadow-lg disabled:opacity-70">
-          {loading ? "Mengirim..." : sent ? "Terkirim ✓" : "Kirim Komentar"}
+        <button
+          type="submit"
+          disabled={loading}
+          className="bg-gradient-to-r from-[#d4af37] to-[#b8870b] hover:brightness-110 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all shadow-lg disabled:opacity-70 group"
+        >
+          <span className="mr-2 inline-block">{loading ? "Mengirim..." : sent ? "Terkirim ✓" : "Kirim Ucapan"}</span>
+          <HiPaperAirplane className="inline-block origin-center relative -top-[2px] -rotate-25 group-hover:rotate-0 group-focus:rotate-0 transition-all" />
         </button>
       </div>
     </motion.form>

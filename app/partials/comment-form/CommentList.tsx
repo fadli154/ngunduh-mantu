@@ -8,6 +8,7 @@ import { FaTrashAlt, FaEdit, FaEllipsisH } from "react-icons/fa";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import Swal from "sweetalert2";
 import { FaClock } from "react-icons/fa";
+import { GoPersonFill } from "react-icons/go";
 
 type Komentar = {
   id: string;
@@ -116,8 +117,18 @@ export default function CommentList() {
               transition={{ duration: 0.3 }}
               className="bg-white dark:bg-dark2-600/60 p-6 rounded-xl shadow-sm dark:shadow-text-500/30 border border-text-500/30 dark:border-text-600 relative w-full"
             >
-              <div className="flex justify-between items-center w-fit mb-5 bg-gradient-to-r from-[#d4af37] via-[#807955] dark:via-[#d1bf7e] to-[#b8860b] px-4 py-2 rounded-full">
-                <p className="font-semibold text-gray-800 dark:text-white 2xl:text-lg">{k.nama}</p>
+              <div className="flex justify-between items-center w-fit mb-4">
+                <div className="p-2 bg-gradient-to-r from-[#d4af37] via-[#ccbd70ce] dark:via-[#bbac4e] to-[#d8a011d2] rounded-full">
+                  <GoPersonFill className="w-6 h-6 text-white dark:text-white2-500" />
+                </div>
+                <div className="ml-2 -mt-[3px]">
+                  <p className="font-bold text-gray-800/45 dark:text-white 2xl:text-lg">{k.nama}</p>
+                  <div className="text-xs relative -mt-[3px] flex items-center text-gray-500/30 dark:text-white/30 2xl:text-sm">
+                    <FaClock className="inline-block mr-1 relative top-[.6px]" />
+                    {/* waktu jam */}
+                    <span>{formatDate(k.waktu)}</span>
+                  </div>
+                </div>
               </div>
 
               {editingId === k.id ? (
@@ -138,12 +149,7 @@ export default function CommentList() {
                 </div>
               ) : (
                 <div className={`flex flex-col `}>
-                  <p className="text-sm text-gray-600 dark:text-white/80 mt-1 break-all whitespace-pre-wrap">{k.pesan}</p>
-                  <div className="text-xs mt-4 relative flex items-center text-gray-500/30 dark:text-white/30 2xl:text-sm">
-                    <FaClock className="inline-block mr-1 relative top-[.7px]" />
-                    {/* waktu jam */}
-                    <span>{formatDate(k.waktu)}</span>
-                  </div>
+                  <p className="text-sm text-gray-600 dark:text-white/80 mt-1 break-all whitespace-pre-wrap font-semibold">{k.pesan}</p>
                 </div>
               )}
 

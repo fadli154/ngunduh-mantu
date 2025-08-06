@@ -1,6 +1,7 @@
 import CommentForm from "@/app/partials/comment-form/CommentForm";
 import CommentList from "@/app/partials/comment-form/CommentList";
 import { Sacramento } from "next/font/google";
+import { FaCommentDots } from "react-icons/fa6";
 
 const sacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
@@ -22,7 +23,9 @@ export default function CommentSection() {
         >
           Komentar<span className="text-dark2-600/20 dark:text-white2-500"> Doa</span>
         </h2>
-        <p className="text-sm md:text-md mb-6 2xl:-mt-7 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]">Tinggalkan ucapan, kesan, atau doa untuk kami.</p>
+        <p className="text-sm md:text-md mb-6 2xl:-mt-7 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]">
+          <FaCommentDots className="inline mr-1 pb-2" size={30} /> Tinggalkan ucapan, kesan, atau doa untuk kami.
+        </p>
       </div>
       <CommentForm />
       <div className="w-full flex flex-col items-center justify-center pt-6 2xl:pb-2">

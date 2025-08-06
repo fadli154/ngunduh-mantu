@@ -133,7 +133,7 @@ export default function WeddingGallery() {
                 {" "}
                 <FaDownload className="text-xl" />{" "}
               </a>
-              <button onClick={() => setIsModalOpen(false)} className="text-red-500 hover:rotate-45 transition">
+              <button onClick={() => setIsModalOpen(false)} className="text-red-500 hover:rotate-30 focus:rotate-30 transition">
                 {" "}
                 <FaTimes className="text-2xl" />{" "}
               </button>
@@ -141,11 +141,11 @@ export default function WeddingGallery() {
 
             <button onClick={goPrev} className="absolute left-6 top-1/2 -translate-y-1/2 text-white/80 hover:scale-125 transition">
               {" "}
-              <FaChevronLeft className="text-2xl" />{" "}
+              <FaChevronLeft className="text-2xl text-text-500" />{" "}
             </button>
             <button onClick={goNext} className="absolute right-6 top-1/2 -translate-y-1/2 text-white/80 hover:scale-125 transition">
               {" "}
-              <FaChevronRight className="text-2xl" />{" "}
+              <FaChevronRight className="text-2xl text-text-500" />{" "}
             </button>
 
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }} className="rounded-xl overflow-hidden px-2 w-[500px] h-[500px] flex items-center justify-center">

@@ -7,6 +7,8 @@ import emailjs from "emailjs-com";
 import { FaUser, FaEnvelopeOpenText } from "react-icons/fa";
 import { MdEventAvailable } from "react-icons/md";
 import toast from "react-hot-toast";
+import { HiPaperAirplane } from "react-icons/hi2";
+import { MdMarkEmailUnread } from "react-icons/md";
 
 const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
@@ -73,6 +75,7 @@ export default function RSVPSection() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]"
         >
+          <MdMarkEmailUnread className="inline mr-1 pb-2" size={30} />
           Mohon konfirmasi kehadiran serta doa restu Anda melalui form berikut.
         </motion.p>
       </div>
@@ -147,8 +150,13 @@ export default function RSVPSection() {
 
         {/* Tombol Submit */}
         <div className="text-center pt-2">
-          <button type="submit" disabled={loading} className="bg-gradient-to-r from-[#d4af37] to-[#b8870b] hover:brightness-110 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all shadow-lg disabled:opacity-70">
-            {loading ? "Mengirim..." : sent ? "Terkirim ✓" : "Kirim Ucapan"}
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-gradient-to-r from-[#d4af37] to-[#b8870b] hover:brightness-110 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all shadow-lg disabled:opacity-70 group"
+          >
+            <span className="mr-2 inline-block">{loading ? "Mengirim..." : sent ? "Terkirim ✓" : "Kirim Ucapan"}</span>
+            <HiPaperAirplane className="inline-block origin-center relative -top-[2px] -rotate-25 group-hover:rotate-0 group-focus:rotate-0 transition-all" />
           </button>
         </div>
       </motion.form>

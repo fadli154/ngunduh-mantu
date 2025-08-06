@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import FlipCard from "@/app/elements/card/FlipCard";
 import { Sacramento } from "next/font/google";
+import { FaGift } from "react-icons/fa";
 
 const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
@@ -11,9 +12,6 @@ export default function GiftSection() {
     <section id="gift" className="px-6 py-20 md:py-28 bg-primary-500/10 dark:bg-dark2-600 flex justify-center items-center ">
       <div className="w-full max-w-5xl flex flex-col items-center text-center gap-10">
         <div className="flex justify-center items-center flex-col">
-          {/* Hiasan garis di atas */}
-          <div className="w-18 h-1 bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] rounded-full mb-2 2xl:mb-8"></div>
-
           {/* Judul */}
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
@@ -30,6 +28,7 @@ export default function GiftSection() {
             Wedding <span className="text-dark2-600/20 dark:text-white2-500">Gift</span>
           </motion.h2>
           <p className="text-sm md:text-md mt-1 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[90%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]">
+            <FaGift className="inline mr-1 pb-2" size={30} />
             Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat ketuk kartu ini untuk menyalin nomor rekening.
           </p>
         </div>
