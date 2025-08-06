@@ -8,7 +8,7 @@ import { FaUser, FaEnvelopeOpenText } from "react-icons/fa";
 import { MdEventAvailable } from "react-icons/md";
 import toast from "react-hot-toast";
 import { HiPaperAirplane } from "react-icons/hi2";
-import { MdMarkEmailUnread } from "react-icons/md";
+import { HiOutlineMail } from "react-icons/hi";
 
 const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
@@ -75,7 +75,7 @@ export default function RSVPSection() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]"
         >
-          <MdMarkEmailUnread className="inline mr-1 pb-2" size={30} />
+          <HiOutlineMail className="inline mr-1 pb-2" size={30} />
           Mohon konfirmasi kehadiran serta doa restu Anda melalui form berikut.
         </motion.p>
       </div>
