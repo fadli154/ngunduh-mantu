@@ -9,6 +9,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import Swal from "sweetalert2";
 import { FaClock } from "react-icons/fa";
 import { GoPersonFill } from "react-icons/go";
+import { format } from "date-fns";
+import { id } from "date-fns/locale";
 
 type Komentar = {
   id: string;
@@ -57,13 +59,6 @@ export default function CommentList() {
     });
   }, []);
 
-  const formatDate = (timestamp: number) => {
-    return new Date(timestamp).toLocaleString("id-ID", {
-      dateStyle: "short",
-      timeStyle: "short",
-    });
-  };
-
   const handleDelete = async (id: string) => {
     const result = await Swal.fire({
       title: "Yakin hapus komentar ini?",
@@ -104,7 +99,7 @@ export default function CommentList() {
 
   return (
     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl w-full mx-auto mt-4">
-      <div ref={containerRef} className="min-h-[200px] max-h-[350px] overflow-y-auto overflow-x-hidden w-full space-y-4 pr-1">
+      <div ref={containerRef} className="min-h-[150px] max-h-[350px] overflow-y-auto overflow-x-hidden w-full space-y-4 pr-1">
         <AnimatePresence mode="popLayout">
           {comments.length === 0 && <p className="text-center text-sm text-gray-500 dark:text-white/60 -mr-1">Belum ada komentar.</p>}
           {comments.map((k) => (
@@ -121,12 +116,12 @@ export default function CommentList() {
                 <div className="p-2 bg-gradient-to-r from-[#d4af37] via-[#ccbd70ce] dark:via-[#bbac4e] to-[#d8a011d2] rounded-full">
                   <GoPersonFill className="w-6 h-6 text-white dark:text-white2-500" />
                 </div>
-                <div className="ml-2 -mt-[3px]">
+                <div className="ml-2 md:-mt-[3px]">
                   <p className="font-bold text-gray-800/45 dark:text-white 2xl:text-lg">{k.nama}</p>
                   <div className="text-xs relative -mt-[3px] flex items-center text-gray-500/30 dark:text-white/30 2xl:text-sm">
                     <FaClock className="inline-block mr-1 relative top-[.6px]" />
                     {/* waktu jam */}
-                    <span>{formatDate(k.waktu)}</span>
+                    <span>{format(new Date(k.waktu), "d MMMM yyyy 'pukul' HH:mm", { locale: id })}</span>
                   </div>
                 </div>
               </div>

@@ -57,7 +57,7 @@ export default function MobileMenu() {
         )}
       >
         <div className={clsx(greGrey_Qo.className, "text-3xl py-5 2xl:text-5xl font-bold tracking-widest text-text-500 lg:text-4xl drop-shadow-sm drop-shadow-text-500 mb-4")} style={{ transform: "scale(1.1)" }}>
-          <Image src="/img/heart.png" className="min-h-12 min-w-12 2xl:min-h-25 2xl:min-w-25 drop-shadow-sm drop-shadow-text-500/60 dark:brightness-75" alt="foto-hati" width={40} height={40} priority />
+          <Image src="/img/heart.png" className="min-h-12 min-w-12 2xl:min-h-25 2xl:min-w-25 drop-shadow-sm drop-shadow-text-500/60 dark:brightness-75" alt="foto-hati" width={35} height={35} priority />
         </div>
 
         {navItems.map((item) => (
