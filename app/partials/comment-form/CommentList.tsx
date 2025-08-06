@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { db } from "@/firebase/config";
 import { ref, remove, update, onValue } from "firebase/database";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaTrashAlt, FaEdit } from "react-icons/fa";
+import { FaTrashAlt, FaEdit, FaEllipsisH } from "react-icons/fa";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import Swal from "sweetalert2";
+import { FaClock } from "react-icons/fa";
 
 type Komentar = {
   id: string;
@@ -112,11 +114,10 @@ export default function CommentList() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="bg-white dark:bg-dark2-600/60 p-4 rounded-xl shadow-sm dark:shadow-text-500/30 border border-text-500/30 dark:border-text-600 relative w-full"
+              className="bg-white dark:bg-dark2-600/60 p-6 rounded-xl shadow-sm dark:shadow-text-500/30 border border-text-500/30 dark:border-text-600 relative w-full"
             >
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-between items-center w-fit mb-5 bg-gradient-to-r from-[#d4af37] via-[#807955] dark:via-[#d1bf7e] to-[#b8860b] px-4 py-2 rounded-full">
                 <p className="font-semibold text-gray-800 dark:text-white 2xl:text-lg">{k.nama}</p>
-                <span className="text-xs text-gray-500/70 dark:text-white/60 2xl:text-sm">{formatDate(k.waktu)}</span>
               </div>
 
               {editingId === k.id ? (
@@ -136,26 +137,39 @@ export default function CommentList() {
                   </div>
                 </div>
               ) : (
-                <div className={`flex justify-between items-center ${k.userId === localUserId ? "mb-4" : ""}`}>
+                <div className={`flex flex-col `}>
                   <p className="text-sm text-gray-600 dark:text-white/80 mt-1 break-all whitespace-pre-wrap">{k.pesan}</p>
+                  <div className="text-xs mt-4 relative flex items-center text-gray-500/30 dark:text-white/30 2xl:text-sm">
+                    <FaClock className="inline-block mr-1 relative top-[.7px]" />
+                    {/* waktu jam */}
+                    <span>{formatDate(k.waktu)}</span>
+                  </div>
                 </div>
               )}
 
               {k.userId === localUserId && editingId !== k.id && (
-                <div className="absolute bottom-4 right-4 flex gap-2 text-sm mt-4">
-                  <button
-                    onClick={() => {
-                      setEditingId(k.id);
-                      setEditedText(k.pesan);
-                    }}
-                    className="text-text-500/80 hover:text-text-500"
-                    title="Edit"
-                  >
-                    <FaEdit size={19} className="cursor-pointer" />
-                  </button>
-                  <button onClick={() => handleDelete(k.id)} className="text-red-500 pt-[1px] hover:text-red-700" title="Hapus">
-                    <FaTrashAlt size={16} className="text-red-500/70 hover:text-red-700/70 cursor-pointer" />
-                  </button>
+                <div className="absolute top-4 right-4 text-sm">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <button className="text-text-500/80 hover:text-text-500" title="Menu">
+                        <FaEllipsisH size={18} />
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent forceMount align="end" className="w-28 custom-dropdown-position">
+                      <DropdownMenuItem
+                        onClick={() => {
+                          setEditingId(k.id);
+                          setEditedText(k.pesan);
+                        }}
+                        className="flex items-center gap-2 cursor-pointer"
+                      >
+                        <FaEdit size={14} className="text-text-500 focus:text-text-500 " /> Edit
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => handleDelete(k.id)} className="flex items-center gap-2 cursor-pointer">
+                        <FaTrashAlt size={13} className="text-red-500 focus:text-red-700 " /> Hapus
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </div>
               )}
             </motion.div>
