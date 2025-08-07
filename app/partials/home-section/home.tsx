@@ -59,7 +59,7 @@ export default function Home() {
       {flowers.map((flower, i) => (
         <motion.div
           key={flower.id}
-          className={`absolute dark:brightness-75 w-35 h-35 lg:w-60 lg:h-60 2xl:w-60 2xl:h-60 ${flower.x} ${flower.translate}`}
+          className={`absolute dark:brightness-65 w-35 h-35 lg:w-60 lg:h-60 2xl:w-60 2xl:h-60 ${flower.x} ${flower.translate}`}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={flowerVariants}
