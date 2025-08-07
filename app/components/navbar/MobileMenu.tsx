@@ -52,7 +52,7 @@ export default function MobileMenu() {
       <div
         ref={menuRef}
         className={clsx(
-          "fixed top-0 left-0 h-full bg-white2-500 dark:bg-background w-64 min-h-screen shadow-xl transition-transform duration-300 ease-in-out flex flex-col p-6 shadow-dark2-600/5 dark:shadow-white2-500/5 space-y-6 z-50 items-center",
+          "fixed top-0 left-0 h-full bg-white2-500 dark:bg-background w-64 min-h-screen shadow-xl transition-transform duration-300 ease-in-out flex flex-col p-6 shadow-dark2-600/10 dark:shadow-white2-500/5 space-y-6 z-50 items-center",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
