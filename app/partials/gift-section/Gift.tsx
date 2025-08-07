@@ -28,7 +28,7 @@ export default function GiftSection() {
             Wedding <span className="text-dark2-600/20 dark:text-white2-500">Gift</span>
           </motion.h2>
           <p className="text-sm md:text-md mt-1 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[90%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]">
-            <CiGift className="inline mr-1 pb-2" size={30} />
+            <CiGift className="inline mr-1" size={30} />
             Tanpa mengurangi rasa hormat, bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, dapat ketuk kartu ini untuk menyalin nomor rekening.
           </p>
         </div>

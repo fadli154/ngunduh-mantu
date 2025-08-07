@@ -82,7 +82,7 @@ export default function RSVPSection() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]"
         >
-          <HiOutlineMail className="inline mr-1 pb-2" size={30} />
+          <HiOutlineMail className="inline mr-1" size={30} />
           Mohon konfirmasi kehadiran serta doa restu Anda melalui form berikut.
         </motion.p>
       </div>
@@ -107,7 +107,7 @@ export default function RSVPSection() {
               name="nama"
               value={form.nama}
               onChange={handleChange}
-              placeholder="Contoh: Budi Santoso"
+              placeholder="Contoh: Siti Kamilah"
               required
               className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-text-500/20 bg-white/90 dark:bg-dark2-600 text-gray-800 dark:text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold ring-text-500/30 transition-all"
             />
