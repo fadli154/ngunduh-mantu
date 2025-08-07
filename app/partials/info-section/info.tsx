@@ -11,7 +11,7 @@ const greSacramento = Sacramento({ subsets: ["latin"], weight: "400" });
 
 export default function EventInfo() {
   return (
-    <section className="w-full bg-primary-500/10 dark:bg-dark2-600 text-white dark:text-white2-500 px-6 py-20 transition-colors duration-500 flex flex-col justify-center items-center" id="info">
+    <section className="w-full relative bg-primary-500/10 dark:bg-dark2-600 text-white dark:text-white2-500 px-6 py-20 transition-colors duration-500 flex flex-col justify-center items-center" id="info">
       <div className="max-w-5xl mx-auto text-center">
         <div className="flex flex-col items-center mb-2">
           {/* Hiasan garis di atas */}

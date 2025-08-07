@@ -61,7 +61,7 @@ const Card = ({ bankName, rek, name }: CardProps) => {
               src={logo}
               alt={bankName}
               className={`
-                ${bankName === "BCA" ? "filter brightness-200 contrast-200 opacity-95 grayscale" : "mt-1"}
+                ${bankName === "BCA" ? "mt-1 mr-1 md:mr-2" : "mt-1"}
                 w-20 sm:w-24 md:w-28 lg:w-32
               `}
               width={130}

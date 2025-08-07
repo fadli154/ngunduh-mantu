@@ -1,7 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import { FaXTwitter, FaFacebook, FaInstagram } from "react-icons/fa6";
+import Image from "next/image";
 
 const links = [
   { title: "Home", href: "#home" },
@@ -21,11 +20,13 @@ export default function FooterSection() {
   return (
     <footer className="py-20 md:py-30 border-t border-muted">
       <div className="mx-auto max-w-6xl px-6 text-center text-sm md:text-base 2xl:text-lg">
-        <div className="flex justify-center mb-8"></div>
+        <div className="flex justify-center mb-8">
+          <Image src="/img/heart.png" alt="Logo" width={50} height={50} />
+        </div>
 
         <nav className="my-8 flex flex-wrap justify-center gap-6 text-sm md:text-base 2xl:text-lg">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:underline">
+            <Link key={link.href} href={link.href} className="hover:underline opacity-60 font-semibold">
               {link.title}
             </Link>
           ))}
