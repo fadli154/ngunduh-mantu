@@ -82,7 +82,7 @@ export default function RSVPSection() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-sm md:text-md mb-6 text-center text-dark2-600/60 dark:text-white2-500/50 max-w-[80%] lg:max-w-[70%] text-[calc(.7rem+.7vw)]"
         >
-          <HiOutlineMail className="inline mr-1" size={30} />
+          <HiOutlineMail className="inline mr-1 pb-1" size={30} />
           Mohon konfirmasi kehadiran serta doa restu Anda melalui form berikut.
         </motion.p>
       </div>

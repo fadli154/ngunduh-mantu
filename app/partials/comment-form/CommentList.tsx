@@ -119,7 +119,7 @@ export default function CommentList() {
                 <div className="ml-2 md:-mt-[3px]">
                   <p className="font-bold text-gray-800/45 dark:text-white 2xl:text-lg">{k.nama}</p>
                   <div className="text-xs relative -mt-[3px] flex items-center text-gray-500/30 dark:text-white/30 2xl:text-sm">
-                    <FaClock className="inline-block mr-1 relative -top-[.1px] md:top-[.6px]" />
+                    <FaClock className="inline-block mr-1 relative -top-[.2px] md:top-[.6px]" />
                     {/* waktu jam */}
                     <span>{format(new Date(k.waktu), "d MMMM yyyy 'pukul' HH:mm", { locale: id })}</span>
                   </div>

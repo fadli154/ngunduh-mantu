@@ -52,12 +52,12 @@ export default function MobileMenu() {
       <div
         ref={menuRef}
         className={clsx(
-          "fixed top-0 left-0 h-full bg-white2-500 dark:bg-background w-64 min-h-screen shadow-2xl transition-transform duration-300 ease-in-out flex flex-col p-6 shadow-white2-500/5 space-y-6 z-50 items-center",
+          "fixed top-0 left-0 h-full bg-white2-500 dark:bg-background w-64 min-h-screen shadow-xl transition-transform duration-300 ease-in-out flex flex-col p-6 shadow-dark2-600/5 dark:shadow-white2-500/5 space-y-6 z-50 items-center",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
         <div className={clsx(greGrey_Qo.className, "text-3xl py-5 2xl:text-5xl font-bold tracking-widest text-text-500 lg:text-4xl drop-shadow-sm drop-shadow-text-500 mb-4")} style={{ transform: "scale(1.1)" }}>
-          <Image src="/img/heart.png" className="min-h-12 min-w-12 2xl:min-h-25 2xl:min-w-25 drop-shadow-sm drop-shadow-text-500/60 dark:brightness-75" alt="foto-hati" width={35} height={35} priority />
+          <Image src="/img/heart.png" className="min-h-10 min-w-10 2xl:min-h-25 2xl:min-w-25 drop-shadow-sm drop-shadow-text-500/60 dark:brightness-75" alt="foto-hati" width={35} height={35} priority />
         </div>
 
         {navItems.map((item) => (
