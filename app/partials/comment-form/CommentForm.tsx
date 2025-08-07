@@ -46,7 +46,7 @@ export default function CommentForm() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-white dark:bg-dark2-600/80 p-6 md:p-8 rounded-2xl shadow-md border-t-2 border-[#d4af37] space-y-6 max-w-xl w-full mx-auto dark:shadow-text-500/20"
+      className="bg-white dark:bg-dark2-600/80 p-8 rounded-2xl shadow-md border-t-2 border-[#d4af37] space-y-6 max-w-xl w-full mx-auto dark:shadow-text-500/20 -mt-1"
     >
       <div className="relative">
         <label className="text-sm font-semibold text-gray-700 dark:text-white mb-2 block 2xl:text-lg">Nama</label>

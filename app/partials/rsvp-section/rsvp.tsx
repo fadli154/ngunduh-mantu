@@ -65,7 +65,7 @@ export default function RSVPSection() {
   };
 
   return (
-    <section id="rsvp" className="transition-colors duration-300 pt-20 pb-15 sm:py-24 px-4 sm:px-6 md:px-10 2xl:px-32">
+    <section id="rsvp" className="transition-colors duration-300 pt-20 pb-15 sm:py-24 px-8 md:px-10 2xl:px-32">
       <div className="max-w-xl mx-auto flex flex-col items-center text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -92,7 +92,7 @@ export default function RSVPSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         onSubmit={handleSubmit}
-        className="max-w-xl mx-auto mt-4 bg-white dark:bg-dark2-600/80 rounded-2xl shadow-lg dark:shadow-text-500/15 px-4 sm:px-6 md:px-10 py-8 border-t-2 border-[#d4af37] sm:py-10 space-y-6 text-left transition-colors duration-300"
+        className="max-w-xl mx-auto mt-1 md:mt-4 bg-white dark:bg-dark2-600/80 rounded-2xl shadow-lg dark:shadow-text-500/15 px-6 md:px-10 py-8 border-t-2 border-[#d4af37] sm:py-10 space-y-6 text-left transition-colors duration-300"
       >
         {/* Nama Lengkap */}
         <div className="relative">

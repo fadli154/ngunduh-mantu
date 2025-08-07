@@ -33,7 +33,7 @@ export default function GiftSection() {
           </p>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row justify-center items-center gap-5">
+        <div className="w-full flex flex-col md:flex-row justify-center items-center gap-5 -mt-4">
           <FlipCard bankName="BCA" rek="6275 1231 81" name="Wenny Tri Landari" />
           <FlipCard bankName="Mandiri" rek="1760 0055 413 52" name="Agung Afriansyah" />
         </div>
