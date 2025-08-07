@@ -28,7 +28,7 @@ export default function CommentSection() {
         </p>
       </div>
       <CommentForm />
-      <div className="w-full flex flex-col items-center justify-center pt-6 2xl:pb-2">
+      <div className="w-full flex flex-col items-center justify-center pt-6 pb-2 2xl:pb-2">
         {/* Hiasan garis di atas */}
         <div className="w-6 h-1 bg-gradient-to-r from-[#d4af37] via-[#f1e189] to-[#b8860b] pt-1 rounded-full"></div>
         <h1 key="title" className="text-md 2xl:text-lg font-bold text-[#c7a47a] tracking-wide uppercase text-center">

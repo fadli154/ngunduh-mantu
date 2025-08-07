@@ -99,7 +99,7 @@ export default function CommentList() {
 
   return (
     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl w-full mx-auto mt-4">
-      <div ref={containerRef} className="min-h-[170px] max-h-[350px] overflow-y-auto overflow-x-hidden w-full space-y-4 pr-1">
+      <div ref={containerRef} className="min-h-[170px] max-h-[400px] overflow-y-auto overflow-x-hidden w-full space-y-4 pr-2">
         <AnimatePresence mode="popLayout">
           {comments.length === 0 && <p className="text-center text-sm text-gray-500 dark:text-white/60 -mr-1">Belum ada komentar.</p>}
           {comments.map((k) => (
@@ -112,16 +112,16 @@ export default function CommentList() {
               transition={{ duration: 0.3 }}
               className="bg-white dark:bg-dark2-600/60 p-6 rounded-xl shadow-sm dark:shadow-text-500/30 border border-text-500/30 dark:border-text-600 relative w-full"
             >
-              <div className="flex justify-between items-center w-fit mb-4">
+              <div className="flex justify-between items-center w-fit mb-5">
                 <div className="p-2 bg-gradient-to-r from-[#d4af37] via-[#ccbd70ce] dark:via-[#bbac4e] to-[#d8a011d2] rounded-full">
-                  <GoPersonFill className="w-6 h-6 text-white dark:text-white2-500" />
+                  <GoPersonFill className="w-5 h-5 text-white dark:text-white2-500" />
                 </div>
-                <div className="ml-2 md:-mt-[3px]">
-                  <p className="font-bold text-gray-800/45 dark:text-white 2xl:text-lg">{k.nama}</p>
+                <div className="ml-[10px] md:-mt-[3px]">
+                  <p className="font-semibold text-gray-800/45 dark:text-white text-sm 2xl:text-lg">{k.nama}</p>
                   <div className="text-xs relative -mt-[3px] flex items-center text-gray-500/30 dark:text-white/30 2xl:text-sm">
                     <FaClock className="inline-block mr-1 relative -top-[.1px] md:top-[.6px]" />
                     {/* waktu jam */}
-                    <span>{format(new Date(k.waktu), "d MMMM yyyy 'pukul' HH:mm", { locale: id })}</span>
+                    <span className="text-xs 2xl:text-sm">{format(new Date(k.waktu), "d MMMM yyyy 'pukul' HH:mm", { locale: id })}</span>
                   </div>
                 </div>
               </div>
@@ -143,8 +143,8 @@ export default function CommentList() {
                   </div>
                 </div>
               ) : (
-                <div className={`flex flex-col `}>
-                  <p className="text-sm text-gray-600 dark:text-white/80 mt-1 break-all whitespace-pre-wrap ">{k.pesan}</p>
+                <div className={`flex flex-col border-l-2 border-text-500/10 py-1 dark:border-text-500/20 pl-2`}>
+                  <p className="text-sm text-gray-600 dark:text-white/80 break-all whitespace-pre-wrap ">{k.pesan}</p>
                 </div>
               )}
 

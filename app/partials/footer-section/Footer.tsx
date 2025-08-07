@@ -21,7 +21,7 @@ export default function FooterSection() {
     <footer className="py-20 md:py-30 border-t border-muted">
       <div className="mx-auto max-w-6xl px-6 text-center text-sm md:text-base 2xl:text-lg">
         <div className="flex justify-center mb-8">
-          <Image src="/img/heart.png" alt="Logo" width={50} height={50} />
+          <Image src="/img/heart.png" alt="Logo" className="drop-shadow-2xl drop-shadow-text-500/30" width={50} height={50} />
         </div>
 
         <nav className="my-8 flex flex-wrap justify-center gap-6 text-sm md:text-base 2xl:text-lg">

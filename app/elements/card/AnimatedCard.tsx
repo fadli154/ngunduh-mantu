@@ -18,7 +18,7 @@ type CardProps = {
 
 export default function AnimatedCard({ title, time, icon, day, month, year, date }: CardProps) {
   return (
-    <div className="e-card playing relative backdrop-blur-3xl w-full h-65 rounded-2xl overflow-hidden shadow-lg dark:shadow-white2-500/10 bg-transparent mx-auto">
+    <div className="e-card playing relative backdrop-blur-3xl w-full h-65 rounded-2xl overflow-hidden shadow-lg dark:shadow-text-500/10 bg-transparent mx-auto">
       {/* Animated Waves */}
       <motion.div className="absolute w-[540px] h-[700px] opacity-60 left-0 top-0 -ml-[50%] -mt-[70%] bg-gradient-to-tr rounded-[40%] animate-wave1 wave" />
       <motion.div className="absolute w-[540px] h-[700px] opacity-60 left-0 top-0 -ml-[50%] -mt-[70%] bg-gradient-to-tr rounded-[40%] animate-wave2 wave" />
