@@ -45,7 +45,14 @@ export default function RSVPSection() {
         setSent(true);
         setLoading(false);
         setForm({ nama: "", hadir: "Ya", ucapan: "" });
-        toast.success("Email berhasil dikirim!");
+        toast.success("Email berhasil dikirim!", {
+          // Styling
+          className: "text-white2-500 font-semibold",
+          iconTheme: {
+            primary: "linear-gradient(744deg, #B8870BFF 0%, #BBA56EFF 60%, #E4A507FF)",
+            secondary: "#fff",
+          },
+        });
         // Reset tombol setelah 3 detik
         setTimeout(() => {
           setSent(false);
@@ -156,7 +163,7 @@ export default function RSVPSection() {
             className="bg-gradient-to-r from-[#d4af37] to-[#b8870b] hover:brightness-110 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all shadow-lg disabled:opacity-70 group"
           >
             <span className="mr-2 inline-block">{loading ? "Mengirim..." : sent ? "Terkirim" : "Kirim Ucapan"}</span>
-            <HiPaperAirplane className="inline-block origin-center relative -top-[2px] -rotate-25 group-hover:rotate-0 group-focus:rotate-0 transition-all" />
+            <HiPaperAirplane className="inline-block origin-center relative -top-[2px] -rotate-25 group-hover:rotate-0 focus:rotate-0 transition-all" />
           </button>
         </div>
       </motion.form>

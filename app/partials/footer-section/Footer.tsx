@@ -34,7 +34,7 @@ export default function FooterSection() {
         <div className="flex justify-center space-x-6 text-muted-foreground">
           {socials.map(({ href, icon: Icon, label }) => (
             <Link key={label} href={href} aria-label={label} className="hover:text-foreground transition-colors">
-              <Icon className="w-5 h-5 2xl:w-6 2xl:h-6 text-text-500/70" />
+              <Icon className="w-5 h-5 2xl:w-6 2xl:h-6 text-text-500/50" />
             </Link>
           ))}
         </div>
