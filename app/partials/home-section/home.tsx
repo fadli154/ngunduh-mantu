@@ -59,7 +59,7 @@ export default function Home() {
       {flowers.map((flower, i) => (
         <motion.div
           key={flower.id}
-          className={`absolute dark:brightness-65 w-35 h-35 lg:w-60 lg:h-60 2xl:w-60 2xl:h-60 ${flower.x} ${flower.translate}`}
+          className={`absolute dark:brightness-65 w-35 h-35 lg:w-60 z-20 lg:h-60 2xl:w-60 2xl:h-60 ${flower.x} ${flower.translate}`}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={flowerVariants}
@@ -95,7 +95,7 @@ export default function Home() {
           <motion.div className="flex justify-center items-center flex-col lg:flex-row-reverse" variants={imageFade} transition={{ delay: 0.6 }}>
             <Image
               src="/img/agung.png"
-              className="relative drop-shadow-md drop-shadow-text-500/60 dark:brightness-75 right-4 md:-right-5 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 rounded-t-full md:rounded-b-full"
+              className="relative drop-shadow-md z-30 drop-shadow-text-500/60 dark:brightness-75 right-4 md:-right-5 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 rounded-t-full md:rounded-b-full"
               alt="foto-mempelai-pria"
               width={180}
               height={180}
@@ -116,7 +116,7 @@ export default function Home() {
           <motion.div className="flex justify-center items-center flex-col lg:flex-row" variants={imageFade} transition={{ delay: 1 }}>
             <Image
               src="/img/wenny.png"
-              className="relative drop-shadow-md drop-shadow-text-500/60 dark:brightness-75 left-4 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 md:-left-5 rounded-t-full md:rounded-b-full"
+              className="relative drop-shadow-md z-30 drop-shadow-text-500/60 dark:brightness-75 left-4 h-25 w-25 md:h-45 md:w-45 2xl:h-60 2xl:w-60 md:-left-5 rounded-t-full md:rounded-b-full"
               alt="foto-mempelai-wanita"
               width={180}
               height={180}
