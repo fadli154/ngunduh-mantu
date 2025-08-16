@@ -120,11 +120,11 @@ export default function WeddingGallery() {
         {/* Modal */}
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
           <DialogContent showCloseButton={false} className="fixed z-[999] flex items-center justify-center bg-black/45 py-10 border-none min-w-full min-h-screen rounded-none">
-            <div className="absolute top-8 left-6 text-white text-lg md:text-xl font-semibold">
+            <div className="absolute top-10 md:top-8 left-6 text-white text-lg md:text-xl font-semibold">
               <DialogTitle>{modalImage?.title}</DialogTitle>
             </div>
 
-            <div className="absolute top-8 right-6 flex gap-12">
+            <div className="absolute top-10 md:top-8 right-6 flex gap-12">
               <button className="text-white hover:scale-110 transition" onClick={() => window.open(modalImage?.src, "_blank")}>
                 {" "}
                 <FaSearchPlus className="text-xl" />{" "}
@@ -152,7 +152,7 @@ export default function WeddingGallery() {
               {modalImage && <Image src={modalImage.src} alt="Zoomed" width={1200} height={800} className="max-w-full max-h-full object-contain rounded-xl" />}
             </motion.div>
 
-            <div className="absolute bottom-8 text-center w-full text-white text-sm">
+            <div className="absolute bottom-10 md:bottom-8 text-center w-full text-white text-sm">
               {selectedImageIndex + 1} dari {filteredItems.length} Foto
             </div>
           </DialogContent>
