@@ -65,7 +65,7 @@ export default function RSVPSection() {
   };
 
   return (
-    <section id="rsvp" className="transition-colors duration-300 pt-20 pb-15 sm:py-24 px-8 md:px-10 2xl:px-32">
+    <section id="rsvp" className="transition-colors duration-300 py-20 sm:py-24 px-8 md:px-10 2xl:px-32">
       <div className="max-w-xl mx-auto flex flex-col items-center text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

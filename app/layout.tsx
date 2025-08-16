@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/app/components/theme-provider";
 import { Toaster } from "react-hot-toast";
 import "@/app/globals.css";
 import Loader from "./elements/preloader/Loader";
+import { MusicProvider } from "@/app/elements/button-audio/MusicProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +36,7 @@ export default function RootLayout({
         <Loader>
           <Toaster position="bottom-left" />
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
+            <MusicProvider>{children}</MusicProvider>
           </ThemeProvider>
         </Loader>
       </body>

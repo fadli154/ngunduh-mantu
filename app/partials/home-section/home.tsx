@@ -3,7 +3,7 @@
 import { Sacramento } from "next/font/google";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { easeOut } from "framer-motion";
+import { easeInOut } from "framer-motion";
 import { useRef } from "react";
 
 const sacramento = Sacramento({ subsets: ["latin"], weight: "400" });
@@ -14,7 +14,7 @@ const flowerVariants = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { delay: custom * 0.3, duration: 1, ease: easeOut },
+    transition: { delay: custom * 0.3, duration: 1, ease: easeInOut },
   }),
 };
 
@@ -27,7 +27,7 @@ export default function Home() {
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: easeOut },
+      transition: { duration: 0.8, ease: easeInOut },
     },
   };
 
@@ -37,7 +37,7 @@ export default function Home() {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 1, ease: easeOut },
+      transition: { duration: 1, ease: easeInOut },
     },
   };
 
