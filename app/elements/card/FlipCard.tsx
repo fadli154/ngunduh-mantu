@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 
 type CardProps = {
-  bankName: "BCA" | "Mandiri";
+  bankName: "BCA" | "Mandiri" | "BRI";
   rek: string;
   name: string;
 };
@@ -20,6 +20,10 @@ const bankStyles = {
   Mandiri: {
     gradient: "from-[#B28D42] to-[#E2C68C]",
     logo: "/img/mandiri-logo.png",
+  },
+  BRI: {
+    gradient: "from-[#002F6C] to-[#0559B3FF]",
+    logo: "/img/brilogo.png",
   },
 };
 
@@ -36,7 +40,8 @@ const Card = ({ bankName, rek, name }: CardProps) => {
           // Styling
           className: "text-white2-500 font-semibold",
           iconTheme: {
-            primary: "linear-gradient(744deg, #B8870BFF 0%, #BBA56EFF 60%, #E4A507FF)",
+            primary:
+              "linear-gradient(744deg, #B8870BFF 0%, #BBA56EFF 60%, #E4A507FF)",
             secondary: "#fff",
           },
         });
@@ -47,10 +52,22 @@ const Card = ({ bankName, rek, name }: CardProps) => {
   };
 
   return (
-    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }} className="relative w-full max-w-[500px] aspect-[1.586] text-white">
-      <div className={`group relative w-full h-full text-center transition-transform duration-700 [transform-style:preserve-3d] ${flipped ? "rotate-y-180" : ""}`} onClick={handleFlip}>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      className="relative w-full max-w-[500px] aspect-[1.586] text-white"
+    >
+      <div
+        className={`group relative w-full h-full text-center transition-transform duration-700 [transform-style:preserve-3d] ${
+          flipped ? "rotate-y-180" : ""
+        }`}
+        onClick={handleFlip}
+      >
         {/* Front Side */}
-        <div className={`absolute w-full h-full rounded-xl bg-gradient-to-br ${gradient} overflow-hidden shadow-xl [backface-visibility:hidden]`}>
+        <div
+          className={`absolute w-full h-full rounded-xl bg-gradient-to-br ${gradient} overflow-hidden shadow-xl [backface-visibility:hidden]`}
+        >
           <div className="absolute top-4 left-4 text-left space-y-1">
             <p className="text-sm lg:text-lg font-bold">{bankName}</p>
             <p className="text-xs -mt-2 text-white/80">Kartu Virtual</p>
@@ -61,8 +78,11 @@ const Card = ({ bankName, rek, name }: CardProps) => {
               src={logo}
               alt={bankName}
               className={`
-                ${bankName === "BCA" ? "mt-1 mr-1 md:mr-2" : "mt-1"}
-                w-20 sm:w-24 md:w-28 lg:w-32
+                ${
+                  bankName === "BRI"
+                    ? "mt-1 mr-1 md:mr-2 w-18 md:w-20 lg:w-24"
+                    : "mt-1 w-20 sm:w-24 md:w-28 lg:w-32"
+                }
               `}
               width={130}
               height={130}
@@ -78,26 +98,50 @@ const Card = ({ bankName, rek, name }: CardProps) => {
             <Image src="/img/chip.png" alt="chip" width={60} height={60} />
           </div>
 
-          <p className="absolute bottom-[25%] left-4 text-xl mb-1 font-bold sm:text-2xl tracking-widest">{rek}</p>
-          <p className="absolute bottom-[16%] left-4 md:-mb-1 text-xs font-medium">12/28</p>
-          <p className="absolute bottom-4 left-4 text-sm font-semibold">{name}</p>
+          <p className="absolute bottom-[25%] left-4 text-xl mb-1 font-bold sm:text-2xl tracking-widest">
+            {rek}
+          </p>
+          <p className="absolute bottom-[16%] left-4 md:-mb-1 text-xs font-medium">
+            12/28
+          </p>
+          <p className="absolute bottom-4 left-4 text-sm font-semibold">
+            {name}
+          </p>
 
           <div className="absolute bottom-4 right-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} viewBox="0 0 48 48">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={36}
+              height={36}
+              viewBox="0 0 48 48"
+            >
               <circle cx="17" cy="24" r="14" fill="#EB001B" />
               <circle cx="31" cy="24" r="14" fill="#F79E1B" />
-              <path fill="#FF5F00" d="M24 10a14 14 0 0 0 0 28a14 14 0 0 0 0-28z" />
+              <path
+                fill="#FF5F00"
+                d="M24 10a14 14 0 0 0 0 28a14 14 0 0 0 0-28z"
+              />
             </svg>
           </div>
         </div>
 
         {/* Back Side */}
-        <div className={`absolute w-full h-full rounded-xl bg-gradient-to-br ${gradient} rotate-y-180 shadow-xl [backface-visibility:hidden]`}>
+        <div
+          className={`absolute w-full h-full rounded-xl bg-gradient-to-br ${gradient} rotate-y-180 shadow-xl [backface-visibility:hidden]`}
+        >
           <div className="absolute top-6 w-full h-10 bg-black" />
           <div className="absolute top-[4.5rem] left-4 right-4 bg-white h-6 rounded" />
           <div className="absolute top-[4.5rem] py-4 w-full bg-white h-6 flex items-center justify-between px-4">
-            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}>{rek}</p>
-            <p className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}>***</p>
+            <p
+              className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}
+            >
+              {rek}
+            </p>
+            <p
+              className={`text-sm ${gradient} bg-clip-text text-transparent bg-gradient-to-r font-extrabold`}
+            >
+              ***
+            </p>
           </div>
         </div>
       </div>

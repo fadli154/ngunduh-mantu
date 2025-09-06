@@ -26,7 +26,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <p className="mt-4 text-sm sm:text-base 2xl:text-lg text-gray-300/70 tracking-wide">Menuju Hari Bahagia — 7 September 2025</p>
+        <p className="mt-4 text-sm sm:text-base 2xl:text-lg text-gray-300/70 tracking-wide">
+          Menuju Hari Bahagia — 13 September 2025
+        </p>
 
         {/* scroll arrow */}
         <ScrollArrow />

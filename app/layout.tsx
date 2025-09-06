@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  title: "Wedding Invitation",
-  description: "Agung & Wenny Wedding Invitation",
+  title: "Ngunduh Mantu",
+  description: "Agung & Wenny Ngunduh Mantu",
 };
 
 export default function RootLayout({
@@ -32,7 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <Loader>
           <Toaster position="bottom-left" />
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

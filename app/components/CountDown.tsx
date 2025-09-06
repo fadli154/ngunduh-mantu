@@ -11,7 +11,7 @@ export interface TimeLeft {
 
 function getTimeLeft(): TimeLeft {
   const now = new Date();
-  const targetDate = new Date("2025-09-07T00:00:00");
+  const targetDate = new Date("2025-09-13T00:00:00");
   const diff = targetDate.getTime() - now.getTime();
 
   if (diff <= 0) {
@@ -27,7 +27,12 @@ function getTimeLeft(): TimeLeft {
 }
 
 export default function Countdown() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const updateCountdown = () => setTimeLeft(getTimeLeft());
@@ -39,12 +44,19 @@ export default function Countdown() {
   return (
     <div className="flex gap-4 text-white2-500 text-2xl font-bold justify-center items-center">
       {["Hari", "Jam", "Menit", "Detik"].map((label, i) => {
-        const value = [timeLeft.days, timeLeft.hours, timeLeft.minutes, timeLeft.seconds][i];
+        const value = [
+          timeLeft.days,
+          timeLeft.hours,
+          timeLeft.minutes,
+          timeLeft.seconds,
+        ][i];
         return (
           <div key={label} className="animate-pop-fade-up">
             <div className="bg-white/10 shadow-sm text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:w-24 2xl:h-22 rounded-full w-18 h-16 md:w-20 lg:w-22 lg:h-20 flex justify-center flex-col items-center md:h-18 backdrop-blur-md">
               <div className="opacity-75">{value}</div>
-              <span className="block text-sm text-white2-500/60 -mt-1">{label}</span>
+              <span className="block text-sm text-white2-500/60 -mt-1">
+                {label}
+              </span>
             </div>
           </div>
         );
